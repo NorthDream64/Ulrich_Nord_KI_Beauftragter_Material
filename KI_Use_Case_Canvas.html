@@ -2834,6 +2834,12 @@ hr.divider{border:none;border-top:1px solid var(--rule);margin:1rem 0;}
     .tuev-verdict.low{background:#fce8e8;color:var(--danger);}
     .tuev-verdict.mid{background:#fff8e1;color:var(--amber);}
     .tuev-verdict.high{background:#e8f5e9;color:var(--ok);}
+    .tuev-rel{display:flex;gap:.3rem;flex-shrink:0;align-items:center;margin-right:.5rem;}
+    .tuev-rel-label{font-family:var(--font-mono);font-size:.55rem;letter-spacing:.06em;text-transform:uppercase;color:#aaa;writing-mode:horizontal-tb;}
+    .tuev-rel-btn{font-family:var(--font-mono);font-size:.55rem;font-weight:600;padding:.2em .5em;border-radius:3px;border:1.5px solid var(--rule);background:var(--paper);cursor:pointer;letter-spacing:.04em;transition:all .15s;}
+    .tuev-rel-btn.rel-ja{border-color:var(--teal);background:#e0f2f1;color:var(--teal);}
+    .tuev-rel-btn.rel-nein{border-color:#999;background:#f5f5f5;color:#999;}
+    .tuev-rel-btn.rel-pruefen{border-color:var(--amber);background:#fff8e1;color:var(--amber);}
   </style>
 
   <!-- Score-Anzeige -->
@@ -2871,15 +2877,16 @@ hr.divider{border:none;border-top:1px solid var(--rule);margin:1rem 0;}
   <!-- Phase 4 -->
   <div class="tuev-phase">
     <div class="tuev-phase-head"><div class="tuev-phase-num">4</div><div class="tuev-phase-title">Steuerungen gemäß Anhang A (ISO 42001)</div></div>
-    <div class="tuev-item"><div class="tuev-item-text"><strong>A.2 — KI-Richtlinie</strong>Stimmen Ihre KI-Richtlinien mit anderen Unternehmensrichtlinien überein und werden sie regelmäßig auf Relevanz und Wirksamkeit überprüft?</div><div class="tuev-toggle"><button class="tuev-btn" onclick="tuevVote(this,'ja')">JA</button><button class="tuev-btn" onclick="tuevVote(this,'nein')">NEIN</button></div></div>
-    <div class="tuev-item"><div class="tuev-item-text"><strong>A.3 — Interne Organisation</strong>Haben Sie interne Verantwortlichkeiten für Ihre KI-Systeme festgelegt, inkl. Meldeverfahren für Bedenken im gesamten KI-Lebenszyklus?</div><div class="tuev-toggle"><button class="tuev-btn" onclick="tuevVote(this,'ja')">JA</button><button class="tuev-btn" onclick="tuevVote(this,'nein')">NEIN</button></div></div>
-    <div class="tuev-item"><div class="tuev-item-text"><strong>A.4 — Ressourcen für KI-Systeme</strong>Haben Sie alle Ressourcen dokumentiert, die für Ihr KI-System wichtig sind (Systemkomponenten, Datenressourcen, Tools, Personal)?</div><div class="tuev-toggle"><button class="tuev-btn" onclick="tuevVote(this,'ja')">JA</button><button class="tuev-btn" onclick="tuevVote(this,'nein')">NEIN</button></div></div>
-    <div class="tuev-item"><div class="tuev-item-text"><strong>A.5 — Folgenabschätzung</strong>Verfügen Sie über ein formelles Verfahren zur Bewertung der Auswirkungen Ihres KI-Systems auf Einzelpersonen, Gruppen und die Gesellschaft?</div><div class="tuev-toggle"><button class="tuev-btn" onclick="tuevVote(this,'ja')">JA</button><button class="tuev-btn" onclick="tuevVote(this,'nein')">NEIN</button></div></div>
-    <div class="tuev-item"><div class="tuev-item-text"><strong>A.6 — Lebenszyklus</strong>Können Sie sicherstellen, dass Ihre KI-Systeme wie vorgesehen funktionieren und während ihrer gesamten Betriebsdauer überwacht werden (Betrieb, Reparaturen, Updates, Support)?</div><div class="tuev-toggle"><button class="tuev-btn" onclick="tuevVote(this,'ja')">JA</button><button class="tuev-btn" onclick="tuevVote(this,'nein')">NEIN</button></div></div>
-    <div class="tuev-item"><div class="tuev-item-text"><strong>A.7 — Daten</strong>Haben Sie Datenmanagementprozesse definiert, dokumentiert und implementiert, die Datenqualität, -herkunft und -aufbereitung abdecken?</div><div class="tuev-toggle"><button class="tuev-btn" onclick="tuevVote(this,'ja')">JA</button><button class="tuev-btn" onclick="tuevVote(this,'nein')">NEIN</button></div></div>
-    <div class="tuev-item"><div class="tuev-item-text"><strong>A.8 — Transparenz gegenüber Stakeholdern</strong>Informieren Sie relevante Parteien über Risiken, Auswirkungen und Managementstrategien Ihrer KI-Systeme (inkl. Vorfallsmeldungen und Beschwerdemöglichkeiten)?</div><div class="tuev-toggle"><button class="tuev-btn" onclick="tuevVote(this,'ja')">JA</button><button class="tuev-btn" onclick="tuevVote(this,'nein')">NEIN</button></div></div>
-    <div class="tuev-item"><div class="tuev-item-text"><strong>A.9 — Ethischer Einsatz</strong>Können Sie den ethisch verantwortungsvollen Einsatz Ihrer KI-Systeme durch definierte und dokumentierte Prozesse sicherstellen?</div><div class="tuev-toggle"><button class="tuev-btn" onclick="tuevVote(this,'ja')">JA</button><button class="tuev-btn" onclick="tuevVote(this,'nein')">NEIN</button></div></div>
-    <div class="tuev-item"><div class="tuev-item-text"><strong>A.10 — Drittbeziehungen</strong>Können Sie Verantwortlichkeit und klares Risikomanagement in Lieferanten- und Kundenbeziehungen nachweisen und mit Ihrem Ansatz für verantwortungsvolle KI vereinbaren?</div><div class="tuev-toggle"><button class="tuev-btn" onclick="tuevVote(this,'ja')">JA</button><button class="tuev-btn" onclick="tuevVote(this,'nein')">NEIN</button></div></div>
+    <div style="padding:.5rem 1.2rem;font-size:.78rem;color:#888;border-bottom:1px solid var(--rule)">Für jede Steuerung: zuerst Relevanz für diesen Use Case bewerten, dann Umsetzungsstand prüfen.</div>
+    <div class="tuev-item"><div class="tuev-item-text"><strong>A.2 — KI-Richtlinie</strong>Stimmen Ihre KI-Richtlinien mit anderen Unternehmensrichtlinien überein und werden sie regelmäßig auf Relevanz und Wirksamkeit überprüft?</div><div class="tuev-rel"><span class="tuev-rel-label">UC</span><button class="tuev-rel-btn" onclick="relVote(this,'ja')" data-rel="rel-a2">✓</button><button class="tuev-rel-btn" onclick="relVote(this,'nein')" data-rel="rel-a2">✗</button><button class="tuev-rel-btn" onclick="relVote(this,'pruefen')" data-rel="rel-a2">?</button></div><div class="tuev-toggle"><button class="tuev-btn" onclick="tuevVote(this,'ja')">JA</button><button class="tuev-btn" onclick="tuevVote(this,'nein')">NEIN</button></div></div>
+    <div class="tuev-item"><div class="tuev-item-text"><strong>A.3 — Interne Organisation</strong>Haben Sie interne Verantwortlichkeiten für Ihre KI-Systeme festgelegt, inkl. Meldeverfahren für Bedenken im gesamten KI-Lebenszyklus?</div><div class="tuev-rel"><span class="tuev-rel-label">UC</span><button class="tuev-rel-btn" onclick="relVote(this,'ja')" data-rel="rel-a3">✓</button><button class="tuev-rel-btn" onclick="relVote(this,'nein')" data-rel="rel-a3">✗</button><button class="tuev-rel-btn" onclick="relVote(this,'pruefen')" data-rel="rel-a3">?</button></div><div class="tuev-toggle"><button class="tuev-btn" onclick="tuevVote(this,'ja')">JA</button><button class="tuev-btn" onclick="tuevVote(this,'nein')">NEIN</button></div></div>
+    <div class="tuev-item"><div class="tuev-item-text"><strong>A.4 — Ressourcen für KI-Systeme</strong>Haben Sie alle Ressourcen dokumentiert, die für Ihr KI-System wichtig sind (Systemkomponenten, Datenressourcen, Tools, Personal)?</div><div class="tuev-rel"><span class="tuev-rel-label">UC</span><button class="tuev-rel-btn" onclick="relVote(this,'ja')" data-rel="rel-a4">✓</button><button class="tuev-rel-btn" onclick="relVote(this,'nein')" data-rel="rel-a4">✗</button><button class="tuev-rel-btn" onclick="relVote(this,'pruefen')" data-rel="rel-a4">?</button></div><div class="tuev-toggle"><button class="tuev-btn" onclick="tuevVote(this,'ja')">JA</button><button class="tuev-btn" onclick="tuevVote(this,'nein')">NEIN</button></div></div>
+    <div class="tuev-item"><div class="tuev-item-text"><strong>A.5 — Folgenabschätzung</strong>Verfügen Sie über ein formelles Verfahren zur Bewertung der Auswirkungen Ihres KI-Systems auf Einzelpersonen, Gruppen und die Gesellschaft?</div><div class="tuev-rel"><span class="tuev-rel-label">UC</span><button class="tuev-rel-btn" onclick="relVote(this,'ja')" data-rel="rel-a5">✓</button><button class="tuev-rel-btn" onclick="relVote(this,'nein')" data-rel="rel-a5">✗</button><button class="tuev-rel-btn" onclick="relVote(this,'pruefen')" data-rel="rel-a5">?</button></div><div class="tuev-toggle"><button class="tuev-btn" onclick="tuevVote(this,'ja')">JA</button><button class="tuev-btn" onclick="tuevVote(this,'nein')">NEIN</button></div></div>
+    <div class="tuev-item"><div class="tuev-item-text"><strong>A.6 — Lebenszyklus</strong>Können Sie sicherstellen, dass Ihre KI-Systeme wie vorgesehen funktionieren und während ihrer gesamten Betriebsdauer überwacht werden (Betrieb, Reparaturen, Updates, Support)?</div><div class="tuev-rel"><span class="tuev-rel-label">UC</span><button class="tuev-rel-btn" onclick="relVote(this,'ja')" data-rel="rel-a6">✓</button><button class="tuev-rel-btn" onclick="relVote(this,'nein')" data-rel="rel-a6">✗</button><button class="tuev-rel-btn" onclick="relVote(this,'pruefen')" data-rel="rel-a6">?</button></div><div class="tuev-toggle"><button class="tuev-btn" onclick="tuevVote(this,'ja')">JA</button><button class="tuev-btn" onclick="tuevVote(this,'nein')">NEIN</button></div></div>
+    <div class="tuev-item"><div class="tuev-item-text"><strong>A.7 — Daten</strong>Haben Sie Datenmanagementprozesse definiert, dokumentiert und implementiert, die Datenqualität, -herkunft und -aufbereitung abdecken?</div><div class="tuev-rel"><span class="tuev-rel-label">UC</span><button class="tuev-rel-btn" onclick="relVote(this,'ja')" data-rel="rel-a7">✓</button><button class="tuev-rel-btn" onclick="relVote(this,'nein')" data-rel="rel-a7">✗</button><button class="tuev-rel-btn" onclick="relVote(this,'pruefen')" data-rel="rel-a7">?</button></div><div class="tuev-toggle"><button class="tuev-btn" onclick="tuevVote(this,'ja')">JA</button><button class="tuev-btn" onclick="tuevVote(this,'nein')">NEIN</button></div></div>
+    <div class="tuev-item"><div class="tuev-item-text"><strong>A.8 — Transparenz gegenüber Stakeholdern</strong>Informieren Sie relevante Parteien über Risiken, Auswirkungen und Managementstrategien Ihrer KI-Systeme (inkl. Vorfallsmeldungen und Beschwerdemöglichkeiten)?</div><div class="tuev-rel"><span class="tuev-rel-label">UC</span><button class="tuev-rel-btn" onclick="relVote(this,'ja')" data-rel="rel-a8">✓</button><button class="tuev-rel-btn" onclick="relVote(this,'nein')" data-rel="rel-a8">✗</button><button class="tuev-rel-btn" onclick="relVote(this,'pruefen')" data-rel="rel-a8">?</button></div><div class="tuev-toggle"><button class="tuev-btn" onclick="tuevVote(this,'ja')">JA</button><button class="tuev-btn" onclick="tuevVote(this,'nein')">NEIN</button></div></div>
+    <div class="tuev-item"><div class="tuev-item-text"><strong>A.9 — Ethischer Einsatz</strong>Können Sie den ethisch verantwortungsvollen Einsatz Ihrer KI-Systeme durch definierte und dokumentierte Prozesse sicherstellen?</div><div class="tuev-rel"><span class="tuev-rel-label">UC</span><button class="tuev-rel-btn" onclick="relVote(this,'ja')" data-rel="rel-a9">✓</button><button class="tuev-rel-btn" onclick="relVote(this,'nein')" data-rel="rel-a9">✗</button><button class="tuev-rel-btn" onclick="relVote(this,'pruefen')" data-rel="rel-a9">?</button></div><div class="tuev-toggle"><button class="tuev-btn" onclick="tuevVote(this,'ja')">JA</button><button class="tuev-btn" onclick="tuevVote(this,'nein')">NEIN</button></div></div>
+    <div class="tuev-item"><div class="tuev-item-text"><strong>A.10 — Drittbeziehungen</strong>Können Sie Verantwortlichkeit und klares Risikomanagement in Lieferanten- und Kundenbeziehungen nachweisen und mit Ihrem Ansatz für verantwortungsvolle KI vereinbaren?</div><div class="tuev-rel"><span class="tuev-rel-label">UC</span><button class="tuev-rel-btn" onclick="relVote(this,'ja')" data-rel="rel-a10">✓</button><button class="tuev-rel-btn" onclick="relVote(this,'nein')" data-rel="rel-a10">✗</button><button class="tuev-rel-btn" onclick="relVote(this,'pruefen')" data-rel="rel-a10">?</button></div><div class="tuev-toggle"><button class="tuev-btn" onclick="tuevVote(this,'ja')">JA</button><button class="tuev-btn" onclick="tuevVote(this,'nein')">NEIN</button></div></div>
   </div>
 
   <!-- Phase 5 -->
@@ -3177,7 +3184,7 @@ hr.divider{border:none;border-top:1px solid var(--rule);margin:1rem 0;}
   </div>
 
   <div class="section-nav">
-    <button class="btn btn-outline" onclick="goTo(18)">← Anhang A: ISO 42001</button>
+    <button class="btn btn-outline" onclick="goTo(18)">← Anhang A: ISO-Readiness Check</button>
     <div class="section-counter">Anhang B</div>
     <button class="btn btn-primary" onclick="window.print()">🖨 Drucken / PDF</button>
   </div>
@@ -3430,6 +3437,15 @@ const PFLICHTFELDER = [
   [12,'pdca-vorfall','Vorfallsmeldung','select'],
   [12,'pdca-korrektur','Korrekturmaßnahmen','select'],
   [12,'pdca-verbesserung','Fortlaufende Verbesserung','text'],
+  [18,'rel-a2','Relevanz A.2 KI-Richtlinie','select'],
+  [18,'rel-a3','Relevanz A.3 Interne Organisation','select'],
+  [18,'rel-a4','Relevanz A.4 Ressourcen','select'],
+  [18,'rel-a5','Relevanz A.5 Folgenabschätzung','select'],
+  [18,'rel-a6','Relevanz A.6 Lebenszyklus','select'],
+  [18,'rel-a7','Relevanz A.7 Daten','select'],
+  [18,'rel-a8','Relevanz A.8 Transparenz','select'],
+  [18,'rel-a9','Relevanz A.9 Ethischer Einsatz','select'],
+  [18,'rel-a10','Relevanz A.10 Drittbeziehungen','select'],
   [13,'gov-owner','KI-System-Eigentümer','text'],
   [13,'gov-op-owner','Operativer Betreiber','text'],
   [13,'gov-kibeauftragter','KI-Beauftragter','text'],
@@ -3712,6 +3728,11 @@ function gatherExtra() {
   document.querySelectorAll('#section-18 .tuev-toggle').forEach((toggle, i) => {
     x['tuev_' + i] = toggle.querySelector('.tuev-btn.ja') ? 'ja'
                    : toggle.querySelector('.tuev-btn.nein') ? 'nein' : '';
+  });
+  // Sec 17 — Relevanz toggles (A.2–A.10)
+  document.querySelectorAll('#section-18 .tuev-rel').forEach((grp, i) => {
+    const active = grp.querySelector('.tuev-rel-btn.rel-ja,.tuev-rel-btn.rel-nein,.tuev-rel-btn.rel-pruefen');
+    x['rel_' + i] = active ? (active.classList.contains('rel-ja') ? 'ja' : active.classList.contains('rel-nein') ? 'nein' : 'pruefen') : '';
   });
   return x;
 }
