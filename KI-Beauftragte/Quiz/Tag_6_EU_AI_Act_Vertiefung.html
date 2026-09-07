@@ -107,7 +107,7 @@ a{color:var(--accent);}
 
 <header class="site-header">
   <div class="eyebrow">Alfatraining · KI-Beauftragte:r · Tag 6</div>
-  <h1>Lernkontrolle<br>Konformitätsprüfung</h1>
+  <h1>Lernkontrolle<br>Konformität & Drift</h1>
   <div class="header-meta">
     <span>10 Fragen</span>
     <span>Eine oder mehrere Antworten können richtig sein</span>
@@ -180,9 +180,9 @@ var QUESTIONS = [
     q: 'Ein neues Hochrisiko-KI-System soll in Betrieb genommen werden. Du klärst als KI-Beauftragte:r, was die Konformitätsbewertung nach Art. 43 EU AI Act umfasst. Welche Aussage(n) sind korrekt?',
     opts: [
       'Die Konformitätsbewertung prüft, ob das System die Anforderungen aus Kapitel III, Abschnitt 2 EU AI Act erfüllt — u. a. Risikomanagement, Datenqualität, Dokumentation, Transparenz, menschliche Aufsicht, Genauigkeit und Cybersicherheit.',
-      'Die Konformitätsbewertung prüft, ob das System die wirtschaftlichste verfügbare Lösung ist.',
-      'Die Konformitätsbewertung ist Aufgabe des Anbieters und muss vor dem Inverkehrbringen abgeschlossen sein.',
-      'Für alle Hochrisiko-KI-Systeme ist zwingend eine externe Konformitätsbewertungsstelle (Notified Body) einzuschalten.'
+      'Die Konformitätsbewertung prüft, ob das System die wirtschaftlich optimale Lösung ist.',
+      'Die Konformitätsbewertung ist Aufgabe des Anbieters und muss vor dem Inverkehrbringen der Anwendung abgeschlossen sein.',
+      'Für alle Hochrisiko-KI-Systeme ist eine externe Konformitätsbewertungsstelle (Notified Body) einzuschalten.'
     ],
     correct: [0,2],
     exp: 'Die Konformitätsbewertung nach Art. 43 prüft die technischen und organisatorischen Mindeststandards für Hochrisiko-KI: Risikomanagement, Datenqualität, Dokumentation, Transparenz, menschliche Aufsicht, Genauigkeit und Cybersicherheit. Sie liegt beim Anbieter und muss vor Inverkehrbringen abgeschlossen sein. Eine externe Notified-Body-Bewertung ist nur für bestimmte Systeme (z. B. Biometrie) Pflicht — für viele Hochrisiko-KI-Systeme ist eine interne Bewertung zulässig. Wirtschaftlichkeit ist kein Prüfgegenstand.',
@@ -190,23 +190,23 @@ var QUESTIONS = [
   },
   {
     set: 'KI-Beauftragte:r',
-    q: 'Ein Lieferant übergibt euch ein CE-gekennzeichnetes Hochrisiko-KI-System. Ein Kollege meint, mit der CE-Kennzeichnung seien alle Pflichten erfüllt. Du klärst als KI-Beauftragte:r auf. Welche Aussage(n) zur CE-Kennzeichnung sind korrekt?',
+    q: 'Ein Lieferant übergibt euch ein CE-gekennzeichnetes Hochrisiko-KI-System. Ein Kollege meint, mit der CE-Kennzeichnung seien alle Pflichten erfüllt. Du klärst als KI-Beauftragte:r auf. Welche Aussage(n) zur CE-Kennzeichnung sind in diesem Zusammenhang korrekt?',
     opts: [
       'Die CE-Kennzeichnung wird vom Anbieter angebracht, nachdem die Konformitätsbewertung erfolgreich abgeschlossen ist.',
-      'Die CE-Kennzeichnung entbindet den Betreiber von eigenen Pflichten — nach dem Kauf greift ausschließlich die Herstellerverantwortung.',
+      'Die CE-Kennzeichnung entbindet den Betreiber von eigenen Pflichten — nach dem Kauf greift die Herstellerverantwortung.',
       'Die CE-Kennzeichnung signalisiert die Konformität mit den Anforderungen des EU AI Act und anderer anwendbarer EU-Rechtsvorschriften.',
       'Der Betreiber kann die CE-Kennzeichnung eigenständig anbringen, wenn er das System ausreichend getestet hat.'
     ],
     correct: [0,2],
-    exp: 'Die CE-Kennzeichnung ist Sache des Anbieters und bestätigt, dass das System die EU-Anforderungen erfüllt. Sie entbindet den Betreiber nicht von eigenen Pflichten — Art. 26 Betreiberpflichten gelten unabhängig davon. Der Betreiber bringt niemals selbst die CE-Kennzeichnung an. Die CE-Kennzeichnung bezieht sich auf Konformität mit dem EU AI Act und ggf. anderen einschlägigen Verordnungen, nicht auf wirtschaftliche Eignung.',
-    src: 'EU AI Act Art. 16, 26, 49', url: 'https://artificialintelligenceact.eu/article/49/'
+    exp: 'Die CE-Kennzeichnung ist Sache des Anbieters, nicht des Betreibers und bestätigt, dass das System die EU-Anforderungen erfüllt. Sie entbindet den Betreiber nicht von eigenen Pflichten — Art. 26 Betreiberpflichten gelten unabhängig davon. Auch der Anbieter kennzeichnet nicht nach eigenem Ermessen: Die interne Konformitätsbewertung nach Anhang VI ist für die meisten Anhang-III-Systeme zwar ohne notifizierte Stelle möglich, folgt aber einem festen Verfahren — Qualitätsmanagementsystem, technische Dokumentation, EU-Konformitätserklärung, Registrierung — und erst danach steht die CE-Kennzeichnung. Der Betreiber bringt niemals selbst die CE-Kennzeichnung an. Die CE-Kennzeichnung bezieht sich auf Konformität mit dem EU AI Act und ggf. anderen einschlägigen Verordnungen, nicht auf wirtschaftliche Eignung.',
+    src: 'EU AI Act Art. 16, 26,43, 48, 49', url: 'https://artificialintelligenceact.eu/article/49/'
   },
   {
     set: 'KI-Beauftragte:r',
     q: 'Das Beschaffungsteam fragt dich, welche Unterlagen ihr von einem Anbieter eines Hochrisiko-KI-Systems einfordern sollt. Du erklärst die Anforderungen an die technische Dokumentation nach Anhang IV EU AI Act. Welche Aussage(n) sind korrekt?',
     opts: [
       'Die technische Dokumentation ist eine umfassende Beschreibung des Systems mit Zweck, Architektur, Trainingsdaten, Leistungsmetriken und Risikobewertung.',
-      'Die technische Dokumentation ist eine kurze Bedienungsanleitung für Endnutzer.',
+      'Die technische Dokumentation ist eine Bedienungsanleitung für Endnutzer.',
       'Die technische Dokumentation muss vor Inverkehrbringen vorliegen und ist Grundlage der Konformitätsbewertung.',
       'Einmal erstellt, muss die Dokumentation nicht mehr aktualisiert werden — auch bei wesentlichen Systemänderungen nicht.'
     ],
@@ -287,7 +287,7 @@ var QUESTIONS = [
     opts: [
       'Anbieter von Hochrisiko-KI-Systemen aus Anhang III müssen sich und ihre Systeme vor Inverkehrbringen in der EU-Datenbank registrieren.',
       'Betreiber von Hochrisiko-KI-Systemen in bestimmten Bereichen (z. B. kritische Infrastruktur, Personalverwaltung) müssen sich ebenfalls registrieren.',
-      'Die EU-KI-Datenbank ist nicht öffentlich zugänglich — sie dient ausschließlich Behördenzwecken.',
+      'Die EU-KI-Datenbank ist nicht öffentlich zugänglich — sie dient in erster Linie Behördenzwecken.',
       'Eine fehlende Registrierung gilt als Verstoß gegen den EU AI Act und kann sanktioniert werden.'
     ],
     correct: [0,1,3],
