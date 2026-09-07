@@ -2092,7 +2092,7 @@ hr.divider{border:none;border-top:1px solid var(--rule);margin:1rem 0;}
         </select>
       </div>
       <div class="field-group">
-        <label>KI-Risikobewertung gemäß AIMS (Abschnitt 6.1)?</label>
+        <label>KI-Risikobeurteilung gemäß AIMS (Kl. 6.1)?</label>
         <select id="std-aims-risiko">
           <option value="">— Auswahl —</option>
           <option>Ja — in AIMS-Prozess integriert</option>
@@ -2100,6 +2100,93 @@ hr.divider{border:none;border-top:1px solid var(--rule);margin:1rem 0;}
           <option>Nein</option>
         </select>
       </div>
+    </div>
+  </div>
+
+  <div class="form-card">
+    <h4>PDCA-Prüfpunkte — ISO 42001 für diesen Use Case</h4>
+    <div class="alert alert-info"><p>Gesprächsleitfaden für das QM-Gespräch: Welche Anforderungen aus ISO/IEC 42001 sind für diesen konkreten Anwendungsfall relevant? Die Anhang-A-Checkliste (Anhang dieses Canvas) prüft die organisatorische Zertifizierungsreife — diese Prüfpunkte hier sind use-case-spezifisch.</p></div>
+
+    <h5 style="margin-top:1rem;font-family:var(--font-mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--teal)">Plan — Was muss vor dem Start geklärt sein?</h5>
+    <div class="field-group">
+      <label>AIMS-Scope (Kl. 4.3): Ist dieses KI-System im Anwendungsbereich des AIMS erfasst?</label>
+      <select id="pdca-scope"><option value="">— Auswahl —</option><option>Ja — im AIMS-Scope</option><option>Nein — Scope-Erweiterung erforderlich</option><option>Kein AIMS vorhanden</option></select>
+    </div>
+    <div class="field-group">
+      <label>KI-Risikobeurteilung (Kl. 6.1.2 / 8.2): Wurde für diesen Use Case eine KI-Risikobeurteilung durchgeführt?</label>
+      <select id="pdca-risiko"><option value="">— Auswahl —</option><option>Ja — dokumentiert</option><option>Geplant</option><option>Nein</option></select>
+    </div>
+    <div class="field-group">
+      <label>KI-System-Folgenabschätzung (Kl. 6.1.4 / A.5): Liegt eine Analyse der Auswirkungen auf Personen, Gruppen und Gesellschaft vor?</label>
+      <select id="pdca-folgen"><option value="">— Auswahl —</option><option>Ja — dokumentiert</option><option>Geplant</option><option>Nein</option></select>
+    </div>
+    <div class="field-group">
+      <label>Erklärung zur Anwendbarkeit (Kl. 6.1.3): Welche Steuerungen aus Anhang A sind relevant — und welche nicht?</label>
+      <textarea id="pdca-soa" rows="2" placeholder="z. B. A.5, A.6, A.7, A.8 relevant; A.10 nicht anwendbar (kein Drittanbieter) — Begründung…"></textarea>
+    </div>
+
+    <h5 style="margin-top:1.2rem;font-family:var(--font-mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--teal)">Do — Was muss bei der Umsetzung gesteuert werden?</h5>
+    <div class="field-row">
+      <div class="field-group">
+        <label>KI-Richtlinie (A.2): Deckt die bestehende Richtlinie diesen Use Case ab?</label>
+        <select id="pdca-richtlinie"><option value="">— Auswahl —</option><option>Ja — abgedeckt</option><option>Ergänzung erforderlich</option><option>Keine KI-Richtlinie vorhanden</option></select>
+      </div>
+      <div class="field-group">
+        <label>Ressourcen (A.4): Sind Daten, Tools, Rechenleistung und Personal dokumentiert?</label>
+        <select id="pdca-ressourcen"><option value="">— Auswahl —</option><option>Ja — dokumentiert</option><option>Teilweise</option><option>Nein</option></select>
+      </div>
+    </div>
+    <div class="field-row">
+      <div class="field-group">
+        <label>Datenqualität (A.7): Sind Herkunft, Qualitätskriterien und Aufbereitung nachvollziehbar?</label>
+        <select id="pdca-daten"><option value="">— Auswahl —</option><option>Ja — dokumentiert</option><option>Teilweise</option><option>Nein</option></select>
+      </div>
+      <div class="field-group">
+        <label>Lebenszyklus (A.6): Ist der KI-Lebenszyklus definiert (Entwicklung → Betrieb → Stilllegung)?</label>
+        <select id="pdca-lifecycle"><option value="">— Auswahl —</option><option>Ja — definiert</option><option>Teilweise</option><option>Nein</option></select>
+      </div>
+    </div>
+    <div class="field-row">
+      <div class="field-group">
+        <label>Transparenz (A.8): Werden betroffene Parteien über Risiken und Beschwerdemöglichkeiten informiert?</label>
+        <select id="pdca-transparenz"><option value="">— Auswahl —</option><option>Ja</option><option>Geplant</option><option>Nein</option></select>
+      </div>
+      <div class="field-group">
+        <label>Drittbeziehungen (A.10): Sind Verantwortlichkeiten mit Zulieferern/Kunden geregelt?</label>
+        <select id="pdca-dritte"><option value="">— Auswahl —</option><option>Ja — vertraglich geregelt</option><option>In Klärung</option><option>Nicht anwendbar</option></select>
+      </div>
+    </div>
+
+    <h5 style="margin-top:1.2rem;font-family:var(--font-mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--teal)">Check — Wie wird die Wirksamkeit überprüft?</h5>
+    <div class="field-row">
+      <div class="field-group">
+        <label>Monitoring (Kl. 9.1): Welche KPIs überwachen die KI-Systemleistung im Betrieb?</label>
+        <textarea id="pdca-monitoring" rows="1" placeholder="z. B. Accuracy, Drift-Rate, Latenz, Fairness-Metriken…"></textarea>
+      </div>
+      <div class="field-group">
+        <label>Internes Audit (Kl. 9.2): Ist dieser Use Case im Auditprogramm erfasst?</label>
+        <select id="pdca-audit"><option value="">— Auswahl —</option><option>Ja — nächstes Audit geplant</option><option>Noch nicht eingeplant</option><option>Kein Auditprogramm vorhanden</option></select>
+      </div>
+    </div>
+    <div class="field-group">
+      <label>Managementbewertung (Kl. 9.3): Fließen die Ergebnisse dieses KI-Systems in die Managementbewertung ein?</label>
+      <select id="pdca-mgmt"><option value="">— Auswahl —</option><option>Ja</option><option>Geplant</option><option>Nein</option></select>
+    </div>
+
+    <h5 style="margin-top:1.2rem;font-family:var(--font-mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--teal)">Act — Was passiert bei Abweichungen?</h5>
+    <div class="field-row">
+      <div class="field-group">
+        <label>Vorfallsmeldung (A.8 / B.8.4): Gibt es ein Meldeverfahren für KI-Vorfälle?</label>
+        <select id="pdca-vorfall"><option value="">— Auswahl —</option><option>Ja — dokumentiert und bekannt</option><option>Ja — aber nicht kommuniziert</option><option>Nein</option></select>
+      </div>
+      <div class="field-group">
+        <label>Korrekturmaßnahmen (Kl. 10.2): Wie werden Nichtkonformitäten behandelt?</label>
+        <select id="pdca-korrektur"><option value="">— Auswahl —</option><option>Prozess definiert</option><option>Ad hoc</option><option>Nicht geregelt</option></select>
+      </div>
+    </div>
+    <div class="field-group">
+      <label>Fortlaufende Verbesserung (Kl. 10.1): Wie fließen Erkenntnisse zurück in den nächsten PDCA-Zyklus?</label>
+      <textarea id="pdca-verbesserung" rows="1" placeholder="z. B. Quartals-Review im KI-Board, Lessons-Learned-Datenbank, Re-Training-Trigger…"></textarea>
     </div>
   </div>
 
@@ -2770,7 +2857,7 @@ hr.divider{border:none;border-top:1px solid var(--rule);margin:1rem 0;}
     <div class="tuev-phase-head"><div class="tuev-phase-num">2</div><div class="tuev-phase-title">Analyse des aktuellen Stands</div></div>
     <div class="tuev-item"><div class="tuev-item-text"><strong>Gap-Analyse</strong>Haben Sie geprüft, inwieweit Ihre bestehenden Prozesse die Anforderungen bereits erfüllen?<div class="tuev-tip">Tipp: Nutzen Sie ein Selbstbewertungstool oder eine externe Beratung.</div></div><div class="tuev-toggle"><button class="tuev-btn" onclick="tuevVote(this,'ja')">JA</button><button class="tuev-btn" onclick="tuevVote(this,'nein')">NEIN</button></div></div>
     <div class="tuev-item"><div class="tuev-item-text"><strong>Risikomanagement</strong>Verfügen Sie über ein Risikomanagementsystem, das speziell auf KI-Anwendungen ausgerichtet ist?<div class="tuev-tip">Tipp: Erkennen Sie Risiken wie Datenlecks, Verzerrungen in Algorithmen und Compliance-Verstöße.</div></div><div class="tuev-toggle"><button class="tuev-btn" onclick="tuevVote(this,'ja')">JA</button><button class="tuev-btn" onclick="tuevVote(this,'nein')">NEIN</button></div></div>
-    <div class="tuev-item"><div class="tuev-item-text"><strong>Dokumentation</strong>Haben Sie die erforderlichen Unterlagen überprüft und aktualisiert (KI-Politik, KI-Risikobewertung, KI-Folgenabschätzung)?</div><div class="tuev-toggle"><button class="tuev-btn" onclick="tuevVote(this,'ja')">JA</button><button class="tuev-btn" onclick="tuevVote(this,'nein')">NEIN</button></div></div>
+    <div class="tuev-item"><div class="tuev-item-text"><strong>Dokumentation</strong>Haben Sie die erforderlichen Unterlagen überprüft und aktualisiert (KI-Richtlinie, KI-Risikobeurteilung, KI-System-Folgenabschätzung)?</div><div class="tuev-toggle"><button class="tuev-btn" onclick="tuevVote(this,'ja')">JA</button><button class="tuev-btn" onclick="tuevVote(this,'nein')">NEIN</button></div></div>
   </div>
 
   <!-- Phase 3 -->
@@ -2783,8 +2870,8 @@ hr.divider{border:none;border-top:1px solid var(--rule);margin:1rem 0;}
 
   <!-- Phase 4 -->
   <div class="tuev-phase">
-    <div class="tuev-phase-head"><div class="tuev-phase-num">4</div><div class="tuev-phase-title">Kontrollen gemäß Anhang A (ISO 42001)</div></div>
-    <div class="tuev-item"><div class="tuev-item-text"><strong>A.2 — KI-Politik</strong>Stimmen Ihre KI-Richtlinien mit anderen Unternehmensrichtlinien überein und werden sie regelmäßig auf Relevanz und Wirksamkeit überprüft?</div><div class="tuev-toggle"><button class="tuev-btn" onclick="tuevVote(this,'ja')">JA</button><button class="tuev-btn" onclick="tuevVote(this,'nein')">NEIN</button></div></div>
+    <div class="tuev-phase-head"><div class="tuev-phase-num">4</div><div class="tuev-phase-title">Steuerungen gemäß Anhang A (ISO 42001)</div></div>
+    <div class="tuev-item"><div class="tuev-item-text"><strong>A.2 — KI-Richtlinie</strong>Stimmen Ihre KI-Richtlinien mit anderen Unternehmensrichtlinien überein und werden sie regelmäßig auf Relevanz und Wirksamkeit überprüft?</div><div class="tuev-toggle"><button class="tuev-btn" onclick="tuevVote(this,'ja')">JA</button><button class="tuev-btn" onclick="tuevVote(this,'nein')">NEIN</button></div></div>
     <div class="tuev-item"><div class="tuev-item-text"><strong>A.3 — Interne Organisation</strong>Haben Sie interne Verantwortlichkeiten für Ihre KI-Systeme festgelegt, inkl. Meldeverfahren für Bedenken im gesamten KI-Lebenszyklus?</div><div class="tuev-toggle"><button class="tuev-btn" onclick="tuevVote(this,'ja')">JA</button><button class="tuev-btn" onclick="tuevVote(this,'nein')">NEIN</button></div></div>
     <div class="tuev-item"><div class="tuev-item-text"><strong>A.4 — Ressourcen für KI-Systeme</strong>Haben Sie alle Ressourcen dokumentiert, die für Ihr KI-System wichtig sind (Systemkomponenten, Datenressourcen, Tools, Personal)?</div><div class="tuev-toggle"><button class="tuev-btn" onclick="tuevVote(this,'ja')">JA</button><button class="tuev-btn" onclick="tuevVote(this,'nein')">NEIN</button></div></div>
     <div class="tuev-item"><div class="tuev-item-text"><strong>A.5 — Folgenabschätzung</strong>Verfügen Sie über ein formelles Verfahren zur Bewertung der Auswirkungen Ihres KI-Systems auf Einzelpersonen, Gruppen und die Gesellschaft?</div><div class="tuev-toggle"><button class="tuev-btn" onclick="tuevVote(this,'ja')">JA</button><button class="tuev-btn" onclick="tuevVote(this,'nein')">NEIN</button></div></div>
@@ -3327,6 +3414,22 @@ const PFLICHTFELDER = [
   [10,'bv-investment','Investitionsrahmen','select'],
   [11,'pmm-plan','Monitoring-Plan','select','hochrisiko'],
   [12,'std-42001','ISO/IEC 42001 Status','select'],
+  [12,'pdca-scope','AIMS-Scope','select'],
+  [12,'pdca-risiko','KI-Risikobeurteilung','select'],
+  [12,'pdca-folgen','KI-System-Folgenabschätzung','select'],
+  [12,'pdca-soa','Erklärung zur Anwendbarkeit','text'],
+  [12,'pdca-richtlinie','KI-Richtlinie','select'],
+  [12,'pdca-ressourcen','Ressourcen','select'],
+  [12,'pdca-daten','Datenqualität','select'],
+  [12,'pdca-lifecycle','Lebenszyklus','select'],
+  [12,'pdca-transparenz','Transparenz','select'],
+  [12,'pdca-dritte','Drittbeziehungen','select'],
+  [12,'pdca-monitoring','Monitoring-KPIs','text'],
+  [12,'pdca-audit','Internes Audit','select'],
+  [12,'pdca-mgmt','Managementbewertung','select'],
+  [12,'pdca-vorfall','Vorfallsmeldung','select'],
+  [12,'pdca-korrektur','Korrekturmaßnahmen','select'],
+  [12,'pdca-verbesserung','Fortlaufende Verbesserung','text'],
   [13,'gov-owner','KI-System-Eigentümer','text'],
   [13,'gov-op-owner','Operativer Betreiber','text'],
   [13,'gov-kibeauftragter','KI-Beauftragter','text'],
