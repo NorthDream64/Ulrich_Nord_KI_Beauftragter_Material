@@ -338,9 +338,11 @@ hr.divider{border:none;border-top:1px solid var(--rule);margin:1rem 0;}
   <div class="step-sep">›</div>
   <div class="step" id="step-17" onclick="goTo(17)"><div class="step-num">☑</div><div class="step-label">Vollständigkeit</div></div>
   <div class="step-sep">›</div>
-  <div class="step" id="step-18" onclick="goTo(18)"><div class="step-num">A</div><div class="step-label">Anhang: ISO 42001</div></div>
+  <div class="step" id="step-18" onclick="goTo(18)"><div class="step-num">A</div><div class="step-label">Anhang: ISO Readiness Check</div></div>
   <div class="step-sep">›</div>
   <div class="step" id="step-19" onclick="goTo(19)"><div class="step-num">B</div><div class="step-label">Anhang: Hochrisiko</div></div>
+  <div class="step-sep">›</div>
+  <div class="step" id="step-20" onclick="goTo(20)"><div class="step-num">C</div><div class="step-label">Anhang: ISO 42001</div></div>
 </div>
 
 <div id="app">
@@ -2794,19 +2796,19 @@ hr.divider{border:none;border-top:1px solid var(--rule);margin:1rem 0;}
       <button class="btn btn-ghost" style="background:var(--navy);color:#fff" onclick="exportJSON()" title="Formularinhalt als .json-Datei herunterladen">⬇ Exportieren</button>
       <label class="btn btn-ghost" style="background:var(--teal);color:#fff;cursor:pointer;margin:0" title="Gespeicherte .json-Datei laden">⬆ Importieren<input type="file" accept=".json" style="display:none" onchange="importJSON(this)"></label>
       <button class="btn btn-primary" onclick="window.print()">🖨 Drucken / PDF</button>
-      <button class="btn btn-outline" onclick="goTo(18)">Anhang: ISO 42001 →</button>
+      <button class="btn btn-outline" onclick="goTo(18)">Anhang: ISO Readiness Check →</button>
     </div>
   </div>
 </div>
 
 
 <!-- ════════════════════════════════════════════════════════════════
-     ABSCHNITT A — ANHANG — ISO/IEC 42001 ZERTIFIZIERUNGS-CHECKLISTE
+     ABSCHNITT A — ANHANG — ISO READINESS CHECK
 ════════════════════════════════════════════════════════════════ -->
 <div class="form-section" id="section-18">
   <div class="section-header" style="border-left-color:var(--teal)">
     <div class="section-tag">Anhang · Referenzinstrument</div>
-    <h2>ISO/IEC 42001 — Zertifizierungs-Checkliste</h2>
+    <h2>ISO Readiness Check</h2>
     <p>Selbstbewertung der Zertifizierungsreife nach dem Instrument von TÜV Rheinland. 22 Ja/Nein-Fragen in 6 Phasen. Auswertung: 0–9 = Grundarbeit erforderlich · 10–16 = auf dem Weg · 17–22 = zertifizierungsreif.</p>
     <div class="kursreferenz">Quelle: TÜV Rheinland — „Sind Sie bereit für Ihre ISO/IEC 42001-Zertifizierung?" (2025) · Einsatz: KI-Manager Tag 2</div>
   </div>
@@ -3184,9 +3186,9 @@ hr.divider{border:none;border-top:1px solid var(--rule);margin:1rem 0;}
   </div>
 
   <div class="section-nav">
-    <button class="btn btn-outline" onclick="goTo(18)">← Anhang A: ISO-Readiness Check</button>
+    <button class="btn btn-outline" onclick="goTo(18)">← Anhang A: ISO Readiness Check</button>
     <div class="section-counter">Anhang B</div>
-    <button class="btn btn-primary" onclick="window.print()">🖨 Drucken / PDF</button>
+    <button class="btn btn-outline" onclick="goTo(20)">Anhang C: ISO 42001 →</button>
   </div>
 
   <script>
@@ -3260,6 +3262,197 @@ hr.divider{border:none;border-top:1px solid var(--rule);margin:1rem 0;}
     };
   })();
   </script>
+</div>
+
+
+<!-- ════════════════════════════════════════════════════════════════
+     ABSCHNITT C — ANHANG — ISO/IEC 42001 ORGANISATORISCHE CHECKLISTE
+════════════════════════════════════════════════════════════════ -->
+<div class="form-section" id="section-20">
+  <div class="section-header" style="border-left-color:var(--teal)">
+    <div class="section-tag">Anhang · Organisatorische Anforderungen</div>
+    <h2>ISO/IEC 42001 — Organisatorische Checkliste</h2>
+    <p>Dokumentation der organisationsweiten AIMS-Anforderungen nach dem PDCA-Zyklus. Anders als der ISO Readiness Check (Anhang A) ist dies kein Schnelltest, sondern ein Arbeitsdokument für die systematische Umsetzung der Norm.</p>
+    <div class="kursreferenz">Grundlage: DIN EN ISO/IEC 42001:2026-08, Klauseln 4–10 · Struktur folgt der High Level Structure (HLS / Annex SL)</div>
+  </div>
+
+  <style>
+    .iso-phase{background:var(--white);border:1px solid var(--rule);border-radius:var(--radius);margin-bottom:1.2rem;overflow:hidden;}
+    .iso-phase-head{background:var(--teal);color:#fff;padding:.6rem 1.2rem;font-family:var(--font-mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;display:flex;align-items:center;gap:.6rem;}
+    .iso-phase-sub{font-size:.62rem;opacity:.8;margin-left:auto;text-transform:none;letter-spacing:normal;}
+    .iso-field{padding:.7rem 1.2rem;border-bottom:1px solid var(--rule);}
+    .iso-field label{display:block;font-size:.82rem;font-weight:600;margin-bottom:.3rem;color:var(--navy);}
+    .iso-field .iso-ref{font-family:var(--font-mono);font-size:.62rem;color:var(--teal);margin-bottom:.3rem;}
+    .iso-field select,.iso-field textarea{width:100%;font-size:.85rem;border:1.5px solid var(--rule);border-radius:4px;padding:.4rem .6rem;font-family:inherit;background:var(--paper);}
+    .iso-field textarea{resize:vertical;}
+    .iso-field select{max-width:320px;}
+  </style>
+
+  <!-- ── Rahmen (Kl. 4–5) ── -->
+  <div class="iso-phase">
+    <div class="iso-phase-head">Rahmen · Kontext & Führung<span class="iso-phase-sub">Klauseln 4–5 · S. 14–15</span></div>
+    <div class="iso-field">
+      <div class="iso-ref">Kl. 4.1 — Verstehen der Organisation und ihres Kontextes</div>
+      <label>Welche internen und externen Themen beeinflussen das AIMS?</label>
+      <textarea id="org-kontext" rows="2" placeholder="z. B. regulatorische Anforderungen, Branche, Unternehmensstrategie, technologische Rahmenbedingungen…"></textarea>
+    </div>
+    <div class="iso-field">
+      <div class="iso-ref">Kl. 4.2 — Verstehen der Erfordernisse und Erwartungen interessierter Parteien</div>
+      <label>Welche Stakeholder haben Anforderungen an das KI-Management?</label>
+      <textarea id="org-stakeholder" rows="2" placeholder="z. B. Aufsichtsbehörden, Kunden, Beschäftigte, Betriebsrat, Datenschutzbeauftragte…"></textarea>
+    </div>
+    <div class="iso-field">
+      <div class="iso-ref">Kl. 4.3 — Festlegen des Anwendungsbereichs des AIMS</div>
+      <label>Für welchen Bereich der Organisation gilt das AIMS?</label>
+      <textarea id="org-scope" rows="1" placeholder="z. B. gesamte Organisation, bestimmte Geschäftsbereiche, bestimmte KI-Systeme…"></textarea>
+    </div>
+    <div class="iso-field">
+      <div class="iso-ref">Kl. 5.1 / 5.2 — Führung und KI-Richtlinie</div>
+      <label>Gibt es eine verabschiedete KI-Richtlinie?</label>
+      <select id="org-richtlinie">
+        <option value="">— Bitte auswählen —</option>
+        <option>Ja — verabschiedet und kommuniziert</option>
+        <option>In Erarbeitung</option>
+        <option>Nein — noch nicht begonnen</option>
+      </select>
+    </div>
+    <div class="iso-field">
+      <div class="iso-ref">Kl. 5.3 — Rollen, Verantwortlichkeiten und Befugnisse</div>
+      <label>Sind die AIMS-Rollen zugewiesen (z. B. KI-Beauftragter, Risikoeigner)?</label>
+      <textarea id="org-rollen" rows="1" placeholder="z. B. KI-Beauftragter: [Name], Risikoeigner: [Name], AIMS-Auditor: [Name]…"></textarea>
+    </div>
+  </div>
+
+  <!-- ── Plan (Kl. 6) ── -->
+  <div class="iso-phase">
+    <div class="iso-phase-head">Plan<span class="iso-phase-sub">Klausel 6 · S. 16–19</span></div>
+    <div class="iso-field">
+      <div class="iso-ref">Kl. 6.1.1 — Allgemeines: Maßnahmen zum Umgang mit Risiken und Chancen</div>
+      <label>Sind die organisationsweiten KI-Risiken und -Chancen systematisch erfasst?</label>
+      <select id="org-risiken-erfasst">
+        <option value="">— Bitte auswählen —</option>
+        <option>Ja — Risikoregister vorhanden</option>
+        <option>Teilweise — informell erfasst</option>
+        <option>Nein</option>
+      </select>
+    </div>
+    <div class="iso-field">
+      <div class="iso-ref">Kl. 6.1.2 — KI-Risikobeurteilung</div>
+      <label>Existiert ein dokumentiertes Verfahren zur KI-Risikobeurteilung?</label>
+      <textarea id="org-risiko-verfahren" rows="2" placeholder="Beschreibe das Verfahren: Wer führt durch? Welche Methodik? Wie oft? Kriterien?"></textarea>
+    </div>
+    <div class="iso-field">
+      <div class="iso-ref">Kl. 6.1.3 — KI-Risikobehandlung</div>
+      <label>Welche Steuerungen aus Anhang A wurden für die Organisation ausgewählt?</label>
+      <textarea id="org-steuerungen" rows="2" placeholder="z. B. A.2 KI-Richtlinie, A.4 Ressourcen, A.7 Daten — mit Begründung für Ein-/Ausschluss…"></textarea>
+    </div>
+    <div class="iso-field">
+      <div class="iso-ref">Kl. 6.1.3 — Erklärung zur Anwendbarkeit (SoA)</div>
+      <label>Liegt eine Erklärung zur Anwendbarkeit vor?</label>
+      <select id="org-soa">
+        <option value="">— Bitte auswählen —</option>
+        <option>Ja — dokumentiert und freigegeben</option>
+        <option>In Erarbeitung</option>
+        <option>Nein</option>
+      </select>
+    </div>
+    <div class="iso-field">
+      <div class="iso-ref">Kl. 6.1.4 — KI-System-Folgenabschätzung</div>
+      <label>Existiert ein Verfahren zur Folgenabschätzung für KI-Systeme?</label>
+      <textarea id="org-folgen" rows="2" placeholder="Wer führt durch? Auf welche KI-Systeme angewendet? Ergebnisse dokumentiert?"></textarea>
+    </div>
+    <div class="iso-field">
+      <div class="iso-ref">Kl. 6.2 — KI-Ziele und Planung zu deren Erreichung</div>
+      <label>Sind messbare KI-Ziele definiert?</label>
+      <textarea id="org-ziele" rows="1" placeholder="z. B. 100 % der Hochrisiko-Systeme dokumentiert bis Q4, Audit-Readiness bis [Datum]…"></textarea>
+    </div>
+  </div>
+
+  <!-- ── Do (Kl. 7–8) ── -->
+  <div class="iso-phase">
+    <div class="iso-phase-head">Do · Unterstützung & Betrieb<span class="iso-phase-sub">Klauseln 7–8 · S. 20–24</span></div>
+    <div class="iso-field">
+      <div class="iso-ref">Kl. 7.1 / 7.2 — Ressourcen und Kompetenz</div>
+      <label>Sind die für das AIMS benötigten Ressourcen und Kompetenzen bereitgestellt?</label>
+      <textarea id="org-ressourcen" rows="2" placeholder="Personal, Budget, Tooling, Schulungen, externe Beratung…"></textarea>
+    </div>
+    <div class="iso-field">
+      <div class="iso-ref">Kl. 7.3 — Bewusstsein</div>
+      <label>Kennen die Mitarbeitenden die KI-Richtlinie und ihre Rolle im AIMS?</label>
+      <select id="org-bewusstsein">
+        <option value="">— Bitte auswählen —</option>
+        <option>Ja — Schulungen durchgeführt</option>
+        <option>Teilweise — nur Schlüsselpersonen</option>
+        <option>Nein — kein Awareness-Programm</option>
+      </select>
+    </div>
+    <div class="iso-field">
+      <div class="iso-ref">Kl. 7.4 / 7.5 — Kommunikation und dokumentierte Information</div>
+      <label>Sind interne/externe Kommunikationswege und Dokumentenlenkung festgelegt?</label>
+      <textarea id="org-doku" rows="1" placeholder="z. B. AIMS-Dokumentation in [System], Berichtsweg an [Gremium], externe Meldepflichten an [Behörde]…"></textarea>
+    </div>
+    <div class="iso-field">
+      <div class="iso-ref">Kl. 8.1 — Betriebliche Planung und Steuerung</div>
+      <label>Sind die in Kl. 6 geplanten Prozesse operativ implementiert?</label>
+      <select id="org-betrieb">
+        <option value="">— Bitte auswählen —</option>
+        <option>Ja — Prozesse laufen produktiv</option>
+        <option>Teilweise — Pilotphase</option>
+        <option>Nein — noch nicht umgesetzt</option>
+      </select>
+    </div>
+    <div class="iso-field">
+      <div class="iso-ref">Kl. 8.2 / 8.3 / 8.4 — Operative Durchführung (Risikobeurteilung, -behandlung, Folgenabschätzung)</div>
+      <label>Werden die drei KI-spezifischen Kernprozesse regelmäßig durchgeführt?</label>
+      <textarea id="org-kernprozesse" rows="2" placeholder="Häufigkeit, letzte Durchführung, Ergebnisse dokumentiert? Wer ist verantwortlich?"></textarea>
+    </div>
+  </div>
+
+  <!-- ── Check (Kl. 9) ── -->
+  <div class="iso-phase">
+    <div class="iso-phase-head">Check · Leistungsbewertung<span class="iso-phase-sub">Klausel 9 · S. 23–24</span></div>
+    <div class="iso-field">
+      <div class="iso-ref">Kl. 9.1 — Überwachung, Messung, Analyse und Bewertung</div>
+      <label>Welche KPIs werden für das AIMS überwacht?</label>
+      <textarea id="org-kpis" rows="2" placeholder="z. B. Anzahl dokumentierter Systeme, Vorfälle, Audit-Findings, Schulungsquote…"></textarea>
+    </div>
+    <div class="iso-field">
+      <div class="iso-ref">Kl. 9.2 — Internes Audit</div>
+      <label>Ist ein internes Auditprogramm für das AIMS eingerichtet?</label>
+      <select id="org-audit">
+        <option value="">— Bitte auswählen —</option>
+        <option>Ja — Auditplan vorhanden, Audits durchgeführt</option>
+        <option>Geplant — Auditplan in Erstellung</option>
+        <option>Nein</option>
+      </select>
+    </div>
+    <div class="iso-field">
+      <div class="iso-ref">Kl. 9.3 — Managementbewertung</div>
+      <label>Findet eine regelmäßige Managementbewertung des AIMS statt?</label>
+      <textarea id="org-mgmt-review" rows="1" placeholder="Häufigkeit, letztes Datum, Teilnehmer, wesentliche Ergebnisse…"></textarea>
+    </div>
+  </div>
+
+  <!-- ── Act (Kl. 10) ── -->
+  <div class="iso-phase">
+    <div class="iso-phase-head">Act · Verbesserung<span class="iso-phase-sub">Klausel 10 · S. 25–26</span></div>
+    <div class="iso-field">
+      <div class="iso-ref">Kl. 10.1 — Nichtkonformität und Korrekturmaßnahmen</div>
+      <label>Wie werden Abweichungen vom AIMS behandelt?</label>
+      <textarea id="org-nonconf" rows="2" placeholder="Meldeverfahren, Ursachenanalyse, Korrekturmaßnahmen, Wirksamkeitsprüfung…"></textarea>
+    </div>
+    <div class="iso-field">
+      <div class="iso-ref">Kl. 10.2 — Fortlaufende Verbesserung</div>
+      <label>Welche Mechanismen gibt es für die fortlaufende Verbesserung des AIMS?</label>
+      <textarea id="org-verbesserung" rows="2" placeholder="z. B. Lessons Learned, Review-Zyklen, Benchmarking, Reifegradmodell…"></textarea>
+    </div>
+  </div>
+
+  <div class="section-nav">
+    <button class="btn btn-outline" onclick="goTo(19)">← Anhang B: Hochrisiko</button>
+    <div class="section-counter">Anhang C</div>
+    <button class="btn btn-primary" onclick="window.print()">🖨 Drucken / PDF</button>
+  </div>
 </div>
 
 
@@ -3446,6 +3639,27 @@ const PFLICHTFELDER = [
   [18,'rel-a8','Relevanz A.8 Transparenz','select'],
   [18,'rel-a9','Relevanz A.9 Ethischer Einsatz','select'],
   [18,'rel-a10','Relevanz A.10 Drittbeziehungen','select'],
+  [20,'org-kontext','Kontext der Organisation','text'],
+  [20,'org-stakeholder','Interessierte Parteien','text'],
+  [20,'org-scope','Anwendungsbereich AIMS','text'],
+  [20,'org-richtlinie','KI-Richtlinie','select'],
+  [20,'org-rollen','Rollen und Verantwortlichkeiten','text'],
+  [20,'org-risiken-erfasst','KI-Risiken erfasst','select'],
+  [20,'org-risiko-verfahren','Verfahren Risikobeurteilung','text'],
+  [20,'org-steuerungen','Ausgewählte Steuerungen','text'],
+  [20,'org-soa','Erklärung zur Anwendbarkeit','select'],
+  [20,'org-folgen','Verfahren Folgenabschätzung','text'],
+  [20,'org-ziele','KI-Ziele','text'],
+  [20,'org-ressourcen','Ressourcen und Kompetenz','text'],
+  [20,'org-bewusstsein','Bewusstsein','select'],
+  [20,'org-doku','Kommunikation und Dokumentation','text'],
+  [20,'org-betrieb','Operative Umsetzung','select'],
+  [20,'org-kernprozesse','Kernprozesse Kl. 8','text'],
+  [20,'org-kpis','KPIs Überwachung','text'],
+  [20,'org-audit','Internes Audit','select'],
+  [20,'org-mgmt-review','Managementbewertung','text'],
+  [20,'org-nonconf','Nichtkonformität','text'],
+  [20,'org-verbesserung','Fortlaufende Verbesserung','text'],
   [13,'gov-owner','KI-System-Eigentümer','text'],
   [13,'gov-op-owner','Operativer Betreiber','text'],
   [13,'gov-kibeauftragter','KI-Beauftragter','text'],
@@ -3776,6 +3990,15 @@ function restoreExtra(data) {
     if (val === 'ja'   && btns[0]) btns[0].classList.add('ja');
     if (val === 'nein' && btns[1]) btns[1].classList.add('nein');
   });
+  // Sec 17 — Relevanz toggles
+  document.querySelectorAll('#section-18 .tuev-rel').forEach((grp, i) => {
+    const val = data['rel_' + i];
+    if (!val) return;
+    grp.querySelectorAll('.tuev-rel-btn').forEach(b => b.classList.remove('rel-ja','rel-nein','rel-pruefen'));
+    const idx = val === 'ja' ? 0 : val === 'nein' ? 1 : 2;
+    const btn = grp.querySelectorAll('.tuev-rel-btn')[idx];
+    if (btn) btn.classList.add('rel-' + val);
+  });
   if (typeof updateTuevScore === 'function') updateTuevScore();
 }
 
@@ -3884,6 +4107,7 @@ function clearForm() {
     pill.textContent = '—';
   });
   document.querySelectorAll('#section-18 .tuev-btn').forEach(b => b.classList.remove('ja','nein'));
+  document.querySelectorAll('#section-18 .tuev-rel-btn').forEach(b => b.classList.remove('rel-ja','rel-nein','rel-pruefen'));
   if (typeof updateTuevScore === 'function') updateTuevScore();
   document.getElementById('agent-warning')?.classList.remove('visible');
 }
