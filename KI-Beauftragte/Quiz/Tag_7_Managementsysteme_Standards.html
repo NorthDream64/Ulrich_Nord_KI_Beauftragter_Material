@@ -180,8 +180,8 @@ var QUESTIONS = [
     q: 'Die Geschäftsführung fragt dich als KI-Beauftragte:r, was ISO/IEC 42001:2023 regelt und ob eine Zertifizierung verpflichtend ist. Welche Aussage(n) ist oder sind korrekt?',
     opts: [
       'ISO/IEC 42001 definiert Anforderungen an ein KI-Managementsystem (AIMS) — von der Kontextanalyse über Risikobeurteilung bis zum kontinuierlichen Verbesserungsprozess.',
-      'ISO/IEC 42001 ist verbindliches EU-Recht und muss von jedem Unternehmen umgesetzt werden.',
-      'Eine Zertifizierung nach ISO/IEC 42001 ist freiwillig — sie kann aber gegenüber Kunden und Aufsichtsbehörden als Konformitätsnachweis dienen.',
+      'ISO/IEC 42001 ist verbindliches EU-Recht und muss vom Unternehmen umgesetzt werden.',
+      'Eine Zertifizierung nach ISO/IEC 42001 ist freiwillig — sie kann aber gegenüber Kunden und Aufsichtsbehörden als Indiz für eine vorhandene KI-Governance dienen.',
       'ISO/IEC 42001 richtet sich ausschließlich an KI-Anbieter — Betreiber sind nicht adressiert.'
     ],
     correct: [0,2],
@@ -220,7 +220,7 @@ var QUESTIONS = [
     opts: [
       'ISO 13485 ist die Qualitätsmanagementnorm für Medizinprodukte und kann für KI-Systeme in der Medizin neben ISO/IEC 42001 einschlägig sein.',
       'ISO/IEC 27001 ist für KI-Systeme mit sensiblen Daten relevant, da sie Anforderungen an Informationssicherheit definiert.',
-      'ISO/IEC 42001 ersetzt bei Medizinprodukten vollständig die ISO 13485 — eine parallele Zertifizierung ist unnötig.',
+      'ISO/IEC 42001 ersetzt bei Medizinprodukten die ISO 13485 — eine parallele Zertifizierung ist unnötig.',
       'IEC 62443 adressiert Cybersicherheit in industriellen Steuerungssystemen und kann bei KI in der Produktion relevant sein.'
     ],
     correct: [0,1,3],
@@ -232,8 +232,8 @@ var QUESTIONS = [
     q: 'Du baust als KI-Beauftragte:r ein KI-Managementsystem (AIMS) nach ISO/IEC 42001 auf. Welche Aussage(n) zu deiner Rolle dabei ist oder sind korrekt?',
     opts: [
       'Du koordinierst die Gap-Analyse, also den Vergleich des Ist-Zustands mit den Norm-Anforderungen.',
-      'Du trägst allein die Verantwortung für das AIMS — die oberste Leitung ist nicht eingebunden.',
-      'Du bist allein verantwortlich für die Erstellung der Erklärung zur Anwendbarkeit — ohne Einbindung anderer Abteilungen.',
+      'Du trägst die Verantwortung für das AIMS — die oberste Leitung ist dabei nicht eingebunden.',
+      'Du bist verantwortlich für die Erstellung der Erklärung zur Anwendbarkeit — ohne Einbindung anderer Abteilungen.',
       'Du führst das externe Zertifizierungsaudit eigenständig durch und entscheidest über die Zertifikatserteilung.'
     ],
     correct: [0],
@@ -247,7 +247,7 @@ var QUESTIONS = [
     q: 'Als Qualitätsmanager:in prüfst du, wie ISO/IEC 42001 und ISO 9001 zusammenpassen. Welche Aussage(n) zur Integration beider Normen ist oder sind korrekt?',
     opts: [
       'Da beide Normen der High Level Structure folgen, lassen sich gemeinsame Kapitel (z. B. Kontext, Führung, Bewertung) in einem integrierten Managementsystem zusammenführen.',
-      'ISO 9001 und ISO/IEC 42001 widersprechen sich in der PDCA-Logik — eine Integration ist nicht möglich.',
+      'ISO 9001 und ISO/IEC 42001 widersprechen sich in der PDCA-Logik — eine Integration ist daher nicht ohne weiteres möglich.',
       'Ein integriertes Audit über ISO 9001 und ISO/IEC 42001 kann Aufwand reduzieren und Synergien nutzen.',
       'ISO/IEC 42001 ergänzt ISO 9001 um KI-spezifische Anforderungen wie Auswirkungsbewertung, Datenqualität und algorithmische Transparenz.'
     ],
@@ -260,9 +260,9 @@ var QUESTIONS = [
     q: 'Ein KI-System soll in einen bestehenden Qualitätsprozess eingebunden werden. Als Qualitätsmanager:in fragst du nach der PDCA-Logik in ISO/IEC 42001. Welche Aussage(n) ist oder sind korrekt?',
     opts: [
       'ISO/IEC 42001 folgt dem Plan-Do-Check-Act-Zyklus: Planung (Kap. 6), Umsetzung (Kap. 8), Bewertung (Kap. 9) und Verbesserung (Kap. 10).',
-      'Der Check-Schritt beschränkt sich auf die Überprüfung der finanziellen Kennzahlen des AIMS-Budgets.',
-      'Act bedeutet im PDCA-Kontext, dass die Geschäftsführung das AIMS-Projekt abschließt und die Ergebnisse archiviert.',
-      'PDCA ist in ISO/IEC 42001 nur eine optionale Empfehlung — Unternehmen können alternativ agile Methoden nutzen.'
+      'Der Check-Schritt bezieht sich auf die Überprüfung der finanziellen Kennzahlen des AIMS-Budgets.',
+      'Act bedeutet im PDCA-Kontext, dass die Geschäftsführung das AIMS-Projekt freigibt und die Ergebnisse ordnungsgemäß archiviert werden.',
+      'PDCA ist in ISO/IEC 42001 nur eine Empfehlung — Unternehmen können alternativ agile Methoden nutzen.'
     ],
     correct: [0],
     exp: 'ISO/IEC 42001 ist konsequent nach PDCA strukturiert: Kap. 6 (Plan: Risiken, Ziele), Kap. 8 (Do: Umsetzung), Kap. 9 (Check: Audits, Managementbewertung), Kap. 10 (Act: Nichtkonformitäten, Verbesserung). Der Check-Schritt umfasst interne Audits und die Managementbewertung — nicht die Prüfung von Budget-Kennzahlen. Act bedeutet kontinuierliche Verbesserung durch Korrekturmaßnahmen — nicht Projektabschluss und Archivierung. PDCA ist kein optionaler Zusatz, sondern strukturgebendes Prinzip.',
@@ -286,8 +286,8 @@ var QUESTIONS = [
     q: 'Als Qualitätsmanager:in fragst du, welche Themen ISO/IEC 42001 gegenüber ISO 9001 ergänzt. Welche Aussage(n) ist oder sind korrekt?',
     opts: [
       'ISO/IEC 42001 ergänzt ISO 9001 um spezifische Anforderungen an Datenqualität und Trainingsdaten für KI-Systeme.',
-      'ISO/IEC 42001 ersetzt vollständig die Anforderungen an Prozesssteuerung aus ISO 9001 für alle KI-relevanten Prozesse.',
-      'ISO 9001 deckt KI-Systeme vollständig ab — ISO/IEC 42001 ist redundant.',
+      'ISO/IEC 42001 ersetzt die Anforderungen an eine Prozesssteuerung aus ISO 9001 für alle KI-relevanten Prozesse.',
+      'ISO 9001 deckt KI-Systeme bereits vollständig ab.',
       'ISO/IEC 42001 enthält Anforderungen an menschliche Aufsicht über KI-Entscheidungen, die in ISO 9001 nicht adressiert werden.'
     ],
     correct: [0,3],
@@ -300,7 +300,7 @@ var QUESTIONS = [
     opts: [
       'Ein integriertes Audit nutzt die gemeinsame HLS-Struktur — Kapitel zu Kontext, Führung und Bewertung werden einmal geprüft, nicht dreimal.',
       'Das integrierte Audit spart Ressourcen und reduziert Unterbrechungen im Tagesgeschäft.',
-      'Für ein integriertes Audit müssen alle drei Normen immer gemeinsam zertifiziert werden.',
+      'Für ein integriertes Audit müssen alle drei Normen gemeinsam zertifiziert werden.',
       'Normspezifische Anforderungen (z. B. KI-Auswirkungsbewertung in 42001) werden im integrierten Audit ergänzend geprüft.'
     ],
     correct: [0,1,3],
