@@ -189,14 +189,79 @@ Die Kommission hat am 19. Mai 2026 Leitlinien-Entwürfe zu Art. 6 Abs. 3 KI-VO v
 
 **Übung:** Ordne jede der vier Initiativen ein:
 
-| Initiative | Anhang-III-Kategorie? | Art. 6 Abs. 3 Filter anwendbar? | Begründung |
-|---|---|---|---|
-| A 1 — Verbrauchsmaterial | ? | ? | Keine personenbezogene Entscheidung — aber woher kommen die Verbrauchsdaten? |
-| A 2 — Onboarding-App | ? | ? | Chatfunktion mit FAQ — aber was passiert, wenn Patienten Symptome schildern? |
-| A 3 — Entlassbriefe (Epikrise) | ? | ? | Medizinisches Dokument mit Rechtswirkung — trifft das „ersetzt menschliche Tätigkeit"? |
-| A 4 — Diagnoseunterstützung | ? | ? | Bilddaten, Hosting in Indien, Gesundheitsentscheidung |
+| Initiative | Anhang-III-Kategorie? | Art. 6 Abs. 3 Filter anwendbar? | **Medizinprodukt?** | Begründung |
+|---|---|---|---|---|
+| A 1 — Verbrauchsmaterial | ? | ? | ? | Keine personenbezogene Entscheidung — aber woher kommen die Verbrauchsdaten? |
+| A 2 — Onboarding-App | ? | ? | ? | Chatfunktion mit FAQ — aber was passiert, wenn Patienten Symptome schildern? |
+| A 3 — Entlassbriefe (Epikrise) | ? | ? | ? | Medizinisches Dokument mit Rechtswirkung — trifft das „ersetzt menschliche Tätigkeit"? |
+| A 4 — Diagnoseunterstützung | ? | ? | ? | Bilddaten, Hosting in Indien, Gesundheitsentscheidung |
 
-Die Tabelle soll **nicht** vorab ausgefüllt werden — sie ist eine offene Praxisübung. Die Kommissions-Leitlinien geben kein Ja/Nein-Raster vor, sondern verlangen eine dokumentierte Einzelfallbewertung.
+Die Tabelle soll **nicht** vorab ausgefüllt werden — sie ist eine offene Praxisübung. Die Kommissions-Leitlinien geben kein Ja/Nein-Raster vor, sondern verlangen eine dokumentierte Einzelfallbewertung. Die vierte Spalte gehört zum folgenden Abschnitt.
+
+---
+
+## Die zweite Regulierungsebene — Medizinprodukterecht
+
+> **Warum dieser Abschnitt nötig ist.** Bis hierher haben wir die vier Initiativen nur nach der KI-VO betrachtet. Für ein Krankenhaus greift aber ein **zweites Regelwerk gleichzeitig** — und es entscheidet über deutlich schärfere Pflichten als die KI-VO. Wer nur nach Anhang III sortiert, übersieht die Hälfte.
+
+### Die Weiche: Zweckbestimmung
+
+Maßgeblich ist nicht, was die Software technisch tut, sondern **welchen Zweck der Hersteller ihr gegeben hat**. Verfolgt sie diagnostische oder therapeutische Zwecke, ist sie **Medical Device Software** — und das Krankenhaus wird zum **Betreiber**.
+
+Daraus folgen Betreiberpflichten, die mit der KI-VO nichts zu tun haben: ordnungsgemäße Installation, Wartung und Überwachung · Schulung des Personals · regelmäßige Sicherheitsüberprüfungen · Meldepflichten bei Zwischenfällen.
+
+**Kommt KI hinzu, greifen beide Regelwerke.** Medizinprodukte mit KI-Anteil fallen regelmäßig in den Hochrisikobereich der KI-VO und erfordern eine Konformitätsbewertung durch eine **Benannte Stelle**. Für das Krankenhaus kommen dann laufendes Monitoring im Betrieb, Dokumentations- und Aufbewahrungspflichten sowie **Datenschutz-Folgenabschätzung und KI-Auswirkungsanalyse** zusammen.
+
+Für rein administrative KI-Systeme, die weder Medizinprodukt noch Sicherheitsbauteil sind, gelten dagegen nur die erleichterten Kompetenz- und Transparenzpflichten.
+
+**Übung:** Fülle die vierte Spalte der Tabelle oben aus. Prüffrage je Initiative: *Welchen Zweck hat der Hersteller angegeben — und deckt sich das mit dem, was St. Ulrich damit tut?*
+
+### Der Rollenwechsel — die wichtigste Falle in diesem Fall
+
+**Bereits geringfügige Änderungen an der Software oder ihrer Zweckbestimmung können dazu führen, dass das Krankenhaus vom Betreiber zum Hersteller wird.** Ausdrücklich genannt wird dabei: **die Weiterentwicklung mit hausinternen Patientendaten.**
+
+Das ist für St. Ulrich keine theoretische Konstellation, sondern die naheliegendste nächste Handlung. Der Satz „Wir trainieren das Diagnosesystem mit unseren eigenen Fällen nach, dann wird es besser" klingt nach einer technischen Verbesserung. Er ist ein **Rollenwechsel mit vollen Herstellerpflichten**: Zertifizierungserfordernis, Aufbau eigener Risiko- und Qualitätsmanagementsysteme, behördliche Meldepflichten.
+
+> **Übung — Rollenspiel.** Dr. Weiss möchte das Diagnosesystem (A 4) mit den eigenen CT-Befunden der letzten drei Jahre nachtrainieren, weil die Trefferquote bei der hiesigen Patientenstruktur schlechter ist als beim Anbieter versprochen. Fachlich ein guter Gedanke. **Was antwortest Du als KI-Beauftragte:r — und was schlägst Du stattdessen vor?**
+
+### Der legale Gegenweg: Eigenherstellung
+
+Krankenhäuser dürfen Medizinprodukte **selbst entwickeln und intern nutzen**, ohne ein vollständiges Konformitätsverfahren mit CE-Kennzeichnung zu durchlaufen — solange **keine vergleichbare Lösung am Markt verfügbar** ist und die **Nutzung auf den internen Bereich beschränkt** bleibt.
+
+Das ist der bewusst offengelassene Innovationspfad: intern entwickeln, im klinischen Alltag an realen Versorgungsdaten erproben, und bei erfolgreicher Validierung in ein zertifiziertes, marktfähiges Produkt überführen.
+
+**Zwei Wege aus derselben Ausgangslage, mit gegensätzlichen Folgen.** Nachtrainieren eines eingekauften Systems macht Dich zum Hersteller eines nicht zertifizierten Produkts. Eigenentwicklung unter den genannten Bedingungen ist zulässig. Der Unterschied liegt nicht in der Technik, sondern im rechtlichen Ausgangspunkt.
+
+### Cloud, KRITIS und Informationssicherheit — der Stand für ein Krankenhaus
+
+**§ 393 SGB V** regelt seit dem 1. Juli 2024 den Cloud-Einsatz im Gesundheitswesen. Für St. Ulrich — Initiative A 4 wird in Indien gehostet — ist das die zentrale Norm. Die Anforderungen sind **kumulativ**:
+
+| Anforderung | Inhalt |
+|---|---|
+| **Verarbeitungsort** (Abs. 2) | Nur im Inland, in einem EU-Mitgliedstaat, einem gleichgestellten Staat oder einem Drittstaat **mit Angemessenheitsbeschluss** — und die datenverarbeitende Stelle muss eine **Niederlassung im Inland** haben |
+| **Technische und organisatorische Maßnahmen** (Abs. 3 Nr. 1) | Angemessen nach dem Stand der Technik. In **zugelassenen Krankenhäusern** gelten sie als angemessen, wenn die Voraussetzungen des **§ 391 SGB V** erfüllt sind (Abs. 5 Nr. 2) |
+| **C5-Testat** (Abs. 3 Nr. 2) | Aktuelles Testat **der datenverarbeitenden Stelle** für die eingesetzten Cloud-Systeme und die eingesetzte Technik. Seit **1. Juli 2025 ist ein C5-Typ-2-Testat** erforderlich; für nach dem 30.06.2025 erstmals in Verkehr gebrachte Systeme genügt in den ersten 18 Monaten ein Typ-1-Testat |
+| **Kundenkriterien** (Abs. 3 Nr. 3) | **Die im Prüfbericht des Testats enthaltenen korrespondierenden Kriterien für Kunden müssen umgesetzt sein** |
+
+> **⚠️ Genau hier liegt ein verbreiteter Irrtum — und er kostet im Ernstfall die Rechtsgrundlage.** Man liest häufig, ein C5-testierter Anbieter genüge und das Krankenhaus müsse nichts weiter prüfen. **Der Gesetzestext sagt etwas anderes.** Absatz 3 nennt drei Voraussetzungen, und die dritte richtet sich ausdrücklich an den Kunden: Die im Prüfbericht enthaltenen **korrespondierenden Kriterien für Kunden** sind umzusetzen. Das Testat des Anbieters ist also **notwendig, aber nicht hinreichend** — es erzeugt eigene Hausaufgaben, die im Prüfbericht stehen. Wer den Bericht nicht gelesen hat, kann nicht wissen, ob er die Norm erfüllt.
+
+**KRITIS und NIS2.** Krankenhäuser ab einer bestimmten Größe gehören zum KRITIS-Sektor Gesundheit. Die Deutsche Krankenhausgesellschaft hat dafür den **Branchenspezifischen Sicherheitsstandard (B3S)** herausgegeben. Das deutsche **NIS2-Umsetzungs- und Cybersicherheitsstärkungsgesetz ist am 6. Dezember 2025 in Kraft getreten** — **ohne Übergangsfrist**. Die Frist zur Erstregistrierung beim BSI lief bis zum 6. März 2026; das Meldeportal ist seit dem 6. Januar 2026 verfügbar. Bußgelder reichen bis 10 Mio. Euro oder 2 % des weltweiten Jahresumsatzes.
+
+**Föderaler Datenschutz.** Neben der DSGVO gelten je nach Trägerschaft zusätzlich kirchliche, landeskrankenhaus- oder hochschulrechtliche Regelungen. In der Praxis führt das häufig zu Unsicherheit — und dazu, dass Häuser aus Vorsicht zurückhaltender agieren, als sie müssten. Das **Gesundheitsdatennutzungsgesetz (GDNG)** schafft für Forschungszwecke Erleichterungen: Pseudonymisierte Daten dürfen auch von externen Dienstleistern als Auftragsverarbeiter weiterverarbeitet werden, landesrechtliche Regelungen werden insoweit verdrängt.
+
+### Quellenkritischer Hinweis
+
+Der Anstoß für diesen Abschnitt stammt aus einem Fachbeitrag von **Sebastian Retter und Dr. Roman Krepki (Forvis Mazars)** in *Management & Krankenhaus* vom 16.09.2025 — einem **Anbieterbeitrag mit Kontaktformular**, verfasst von einer Beratung, die genau die dort empfohlenen Compliance-Leistungen verkauft. **Belegstufe C.**
+
+Der Beitrag wird deshalb **nicht zitiert**. Zitiert werden MDR, KI-VO, § 393 und § 391 SGB V sowie das NIS2-Umsetzungsgesetz. Drei Abweichungen sind bei der Prüfung aufgefallen und hier korrigiert:
+
+1. Der Beitrag bezeichnet NIS2 als **„Verordnung"**. NIS2 ist eine **Richtlinie** (EU) 2022/2555 — der Unterschied ist gerade hier wesentlich, weil sie nationaler Umsetzung bedurfte.
+2. Er erwartet das deutsche Umsetzungsgesetz „frühestens Ende 2025". Es ist seit dem **6. Dezember 2025 in Kraft**.
+3. Er legt nahe, bei C5-testierten Anbietern sei **keine ergänzende Prüfung des Krankenhauses erforderlich**. **Das steht so nicht im Gesetz** — § 393 Abs. 3 Nr. 3 verlangt ausdrücklich die Umsetzung der Kundenkriterien aus dem Prüfbericht.
+
+Die dritte Abweichung entlastet das Krankenhaus. Ob Vereinfachung oder Interesse — für die Kursarbeit gilt: **Bei Aussagen, die einen entlasten, lohnt der Blick in den Gesetzestext besonders.**
+
+*Stand des Gesetzestextes: § 393 SGB V in der Fassung des Gesetzes zur Befugniserweiterung und Entbürokratisierung in der Pflege vom 22.12.2025, in Kraft seit 01.01.2026.*
 
 ---
 
@@ -213,6 +278,10 @@ Die Tabelle soll **nicht** vorab ausgefüllt werden — sie ist eine offene Prax
 | Governance-Entscheidung | myScribe On-Premise gegen Cloud — Rollenspiel mit Peter Miese (IT-Leitung) |
 | Risikoklassifizierung EU AI Act | Art. 6 Abs. 3 Filter-Mechanismus — welche der vier Initiativen ist Hochrisiko? |
 | Art. 5 / Emotionserkennung | Artsight-Kameras als Gegenbeispiel: Sturzrisiko ≠ Emotion (Erwägungsgrund 18) |
+| Medizinprodukterecht | Zweckbestimmung als Weiche — vierte Spalte der Einordnungstabelle; zwei Regelwerke greifen gleichzeitig |
+| Rollenwechsel Betreiber → Hersteller | Rollenspiel mit Dr. Weiss: Nachtrainieren von A 4 mit eigenen CT-Befunden; Gegenweg Eigenherstellung |
+| Cloud-Governance / § 393 SGB V | A 4 wird in Indien gehostet — Prüfung von Verarbeitungsort, Niederlassung im Inland, C5-Typ-2-Testat **und Kundenkriterien** |
+| Quellenkritik an Beratungsbeiträgen | Die drei korrigierten Abweichungen im Anbieterbeitrag — insbesondere die entlastende Fehlaussage zum C5-Testat |
 
 ---
 *Letzte Aktualisierung: September 2026 — Ulrich Nord / Claude (Anthropic)*
