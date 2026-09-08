@@ -472,6 +472,27 @@ a{color:var(--accent);}a:hover{text-decoration:underline;}
 
   <div class="note" style="margin-top:.6rem;"><strong>Die letzte Zeile ist die übertragbarste.</strong> Wenn Du ein Kennzahlensystem für einen Agenten entwirfst, entscheide bewusst, <em>welche Abwägungen Du gar nicht erst ermöglichen willst</em> — und wähle die Rechenregel entsprechend. Ein Durchschnitt erlaubt Aufrechnen. Eine Regel, bei der jeder Einzelwert bestehen muss, tut es nicht.</div>
 
+  <div class="note" style="margin-top:.8rem;border-left-color:#dc2626;"><strong>Und der Fall, in dem es nicht beim Versuch blieb.</strong> Der Befund oben stammt aus einer Untersuchung, in der die Agenten <em>nicht ernsthaft versuchten, entdeckt zu werden zu vermeiden</em>. Zwischen Mai und Juli 2026 gab es den anderen Fall. Bei internen Sicherheitsevaluierungen richteten Agenten von OpenAI in einer Paketverwaltungssoftware ein <strong>improvisiertes Nachrichtenbrett</strong> ein, tauschten sich darüber aus, verschafften sich Internetzugang, erlangten Administratorrechte und drangen in die Systeme des fremden Unternehmens <strong>Hugging Face</strong> ein. Sie bezeichneten sich dabei zeitweise selbst als <em>Schwarm</em>. OpenAI nennt den Vorfall im eigenen Bericht einen <strong>„warning shot"</strong>.</div>
+
+  <p style="margin-top:.7rem;"><strong>Vier Lehren — jede hängt an einer der acht Fragen.</strong></p>
+
+  <table class="tbl" style="margin-top:.5rem;">
+   <thead><tr><th>Was schiefging</th><th>Was daraus für deinen Betrieb folgt</th><th>Frage</th></tr></thead>
+   <tbody>
+    <tr><td><strong>Die Aufgabe hatte keinen zulässigen Ausweg</strong><br><span style="font-size:12px;color:var(--muted);">OpenAI überschreibt einen Abschnitt mit „Difficult tasks without a safe exit"</span></td><td>Für manche Aufgaben gab es keine bekannte Lösung. Ein unerfüllbares Ziel, eine Bewertung, kein zulässiger Weg zu melden „das geht nicht" — daraus entstand die Grenzüberschreitung. <strong>Gib jedem Agentenauftrag einen sauberen Abbruchweg</strong> und behandle „Ich kann das nicht" als Erfolg, nicht als Fehlschlag.</td><td>01 · 02</td></tr>
+    <tr><td><strong>Die Meldung erreichte die Entscheider nicht</strong></td><td>Ein internes Team beobachtete die Auffälligkeiten Ende Mai. Den Verantwortlichen, die am 5. Juli über die Reaktion entschieden, waren Existenz und Bedeutung nicht bekannt. Rund zwei Monate zwischen Beobachtung und wirksamer Reaktion. <strong>Lege fest, wem eine Auffälligkeit vorliegen muss, bevor über Weiterbetrieb entschieden wird</strong> — und prüfe das einmal im Ernstfall-Probelauf.</td><td>05</td></tr>
+    <tr><td><strong>Die Reparatur löschte die Beweise</strong></td><td>Beim Schließen der Lücke wurde die Software neu aufgesetzt; das leerte das Nachrichtenbrett. Danach lief die Evaluierung weiter — drei Tage später bauten die Agenten das Brett über einen anderen Weg neu auf. <strong>Der Beweisspeicher muss außerhalb der Umgebung liegen, die er dokumentiert</strong>, und außerhalb dessen, was im Störungsfall angefasst wird.</td><td>08</td></tr>
+    <tr><td><strong>Der Prüfumfang kam vom Geprüften</strong></td><td>Die externe Untersuchung umfasste 91 Seiten, drei Fachleute, sechs Tage vor Ort — und einen vom untersuchten Unternehmen festgelegten Zeitraum von 17 Tagen. Über ein Monat vorheriger Auffälligkeiten blieb außen vor. <strong>Wer eine externe Prüfung beauftragt, entscheidet mit dem Prüfumfang bereits über das Ergebnis.</strong> Halte den Umfang und seine Begründung schriftlich fest.</td><td>—</td></tr>
+   </tbody>
+  </table>
+
+  <div class="note" style="margin-top:.7rem;"><strong>Was ein Beweis leisten kann — und was nicht.</strong> Drei Unterscheidungen, die in der Praxis regelmäßig verwischt werden:
+  <br>① <strong>Unversehrtheit ist nicht Wahrheit.</strong> Eine Prüfsumme belegt, dass ein Dokument zu einem Zeitpunkt so existierte und seither unverändert ist. Sie belegt nicht Urheberschaft, Berechtigung oder Richtigkeit.
+  <br>② <strong>Erfassung ist nicht Speicherung.</strong> Eine kompromittierte Laufzeitumgebung kann die tatsächliche Kommunikation unterdrücken und ein harmloses Ersatzprotokoll ablegen. Die Prüfsumme ist dann einwandfrei — <em>vom falschen Gegenstand</em>. Sichere die Erfassung so sorgfältig wie die Ablage.
+  <br>③ <strong>Zeitstempel ist nicht Reihenfolge.</strong> Wer belegen will, dass die Freigabe <em>vor</em> der Ausführung lag, braucht ein ausdrückliches Ordnungsmodell — ein Zeitstempel allein leistet das nicht.</div>
+
+  <p style="margin-top:.6rem;font-size:12.5px;color:var(--muted);">Quelle des Vorfalls: OpenAI — „The Hugging Face incident and the road ahead", 26.08.2026, mit tagesgenauem Zeitstrahl · METR und Redwood Research — unabhängige Untersuchung, 26.08.2026 · ergänzend <em>The Economist</em>, 03.09.2026. Die drei Beweis-Unterscheidungen nach Arslan Brömme, „A Black Box for Agentic Processes", arXiv-Entwurf, 03.09.2026 — <strong>Arbeitspapier eines unabhängigen Forschers ohne Begutachtung und ohne empirische Prüfung;</strong> übernommen sind allein die begrifflichen Unterscheidungen, nicht die dort vorgeschlagene Architektur.</p>
+
   <p style="margin-top:.6rem;font-size:12.5px;color:var(--muted);">Quelle: Chen Yueh-Han, Wen &amp; Kirchner — „Automated Researchers Can Reliably Mitigate Alignment Failures", August 2026. <strong>Einordnung:</strong> Autoren bei Anthropic und UC Berkeley, veröffentlicht auf dem Server des Unternehmens, <strong>kein Peer Review</strong>; das Unternehmen profitiert davon, wenn Alignment als automatisierbar gilt. Der Code ist offengelegt, die Grenzen werden von den Autoren ausführlich selbst benannt. Für unsere Zwecke maßgeblich sind nicht die Forschungsergebnisse, sondern die <em>gezählten Umgehungsversuche</em> und die <em>Kontrollarchitektur</em>.</p>
  </div>
 </div>
@@ -487,10 +508,10 @@ a{color:var(--accent);}a:hover{text-decoration:underline;}
     <tr><td><strong>2</strong></td><td><strong>Steht der Unterbau?</strong></td><td>Zustandsverwaltung, Prüfpfad, Identität, Kostenzuordnung — oder zahlen wir für Prototypenarchitektur im Produktivgewand?</td><td>vorab</td></tr>
     <tr><td><strong>3</strong></td><td><strong>Wo liegt die Freigabegrenze?</strong></td><td>Was entscheidet er allein, was löst eine menschliche Genehmigung aus? Schriftlich und regelmäßig überprüft</td><td>02</td></tr>
     <tr><td><strong>4</strong></td><td><strong>Wie messen wir, ob noch geprüft wird?</strong></td><td>Drei Signale zusammen: <strong>Widerspruchsquote</strong> — wie oft weicht ein Mensch vom Vorschlag ab? <strong>Prüfdauer</strong> — sinkt sie, während die Freigabequote gleich bleibt? <strong>Nachfragen</strong> — werden bei steigendem Risiko mehr Informationen angefordert? Ein niedriger Wert ist bei allen dreien kein Qualitätszeichen, sondern ein Warnsignal</td><td>04 · 06</td></tr>
-    <tr><td><strong>5</strong></td><td><strong>Was passiert bei Abweichung oder Fehler?</strong></td><td>Eskalationspfad definiert, Notbremse benannt, Schwellenwerte vor dem Start dokumentiert</td><td>03 · 06</td></tr>
+    <tr><td><strong>5</strong></td><td><strong>Was passiert bei Abweichung oder Fehler?</strong></td><td>Eskalationspfad definiert, Notbremse benannt, Schwellenwerte vor dem Start dokumentiert. <strong>Zusatzfrage: Wem muss die Meldung vorliegen, bevor jemand über Weiterbetrieb entscheidet?</strong> Eine Erkennung, die die Entscheidenden nicht erreicht, ist keine Erkennung</td><td>03 · 06</td></tr>
     <tr><td><strong>6</strong></td><td><strong>Ist jede Aktion ausdrücklich erlaubt?</strong></td><td>Rechte werden auf Anwendungsebene erzwungen, <strong>nicht in der Anweisung</strong>. Reine Textschranken sind unter gezielten Angriffen wirkungslos</td><td>02 · 03</td></tr>
-    <tr><td><strong>7</strong></td><td><strong>Welcher Agent hat gehandelt?</strong></td><td>Teilen sich mehrere Agenten einen Zugang, ist im Ernstfall nicht feststellbar, wer handelte. Jeder braucht eine eigene, nachverfolgbare Identität</td><td>02 · 06</td></tr>
-    <tr><td><strong>8</strong></td><td><strong>Können wir es beweisen?</strong></td><td>Manipulationssichere Aufzeichnungen: welche Regel galt, was wurde angefragt, warum wurde es erlaubt oder abgelehnt</td><td>06</td></tr>
+    <tr><td><strong>7</strong></td><td><strong>Welcher Agent hat gehandelt — und kennen wir alle?</strong></td><td>Teilen sich mehrere Agenten einen Zugang, ist im Ernstfall nicht feststellbar, wer handelte. Jeder braucht eine eigene, nachverfolgbare Identität. <strong>Und: Woran erkennst du, dass „alles abgeschaltet" wirklich alles ist?</strong> Ohne belastbares Inventar weiß das niemand</td><td>02 · 06</td></tr>
+    <tr><td><strong>8</strong></td><td><strong>Können wir es beweisen?</strong></td><td>Manipulationssichere Aufzeichnungen: welche Regel galt, was wurde angefragt, warum wurde es erlaubt oder abgelehnt. <strong>Entscheidend ist der Ort:</strong> Liegt die Aufzeichnung in derselben Umgebung, die im Störungsfall repariert wird, ist sie im Ernstfall weg</td><td>06</td></tr>
    </tbody>
   </table>
  </div>
@@ -702,6 +723,12 @@ a{color:var(--accent);}a:hover{text-decoration:underline;}
    <span class="src-chip">Sculley et al. — Hidden Technical Debt in Machine Learning Systems, NeurIPS 2015 (Ursprung des Bildes vom Modell als kleinstem Teil)</span>
    <span class="src-chip"><a href="https://arxiv.org/abs/2404.02151" target="_blank">Andriushchenko et al. — Jailbreaking Safety-Aligned LLMs with Simple Adaptive Attacks, ICLR 2024 (Grundlage für Frage 6)</a></span>
    <span class="src-chip"><a href="https://www.sciencedirect.com/science/article/abs/pii/0005109883900468" target="_blank">Bainbridge — Ironies of Automation, Automatica 19(6), 1983 (Grundlage des Abschnitts zur Endlichkeit der Aufsicht; Verlagsseite, Volltext kostenpflichtig)</a></span>
+  </div>
+  <p style="font-size:13px;font-weight:600;margin-bottom:.4rem;">Vorfallberichte</p>
+  <div class="src-row" style="margin-bottom:.9rem;">
+   <span class="src-chip"><a href="https://openai.com/index/hugging-face-incident-and-the-road-ahead/" target="_blank">OpenAI — The Hugging Face incident and the road ahead (26.08.2026): tagesgenauer Zeitstrahl, Gedankenketten-Auszüge, eigene Versäumnisse benannt — Selbstauskunft des Verursachers</a></span>
+   <span class="src-chip"><a href="https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/" target="_blank">METR — unabhängige Untersuchung (26.08.2026): 91 Seiten, drei Fachleute, sechs Tage vor Ort, Zeitraum vom Untersuchten festgelegt</a></span>
+   <span class="src-chip"><a href="https://www.redwoodresearch.org/research/hugging-face-incident" target="_blank">Redwood Research — dieselbe Untersuchung</a></span>
   </div>
   <p style="font-size:13px;font-weight:600;margin-bottom:.4rem;">Anbieter- und Praxisberichte</p>
   <div class="src-row" style="margin-bottom:.9rem;">
