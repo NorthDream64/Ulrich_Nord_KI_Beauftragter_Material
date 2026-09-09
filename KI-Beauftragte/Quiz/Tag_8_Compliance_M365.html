@@ -106,7 +106,7 @@ a{color:var(--accent);}
 <body>
 
 <header class="site-header">
-  <div class="eyebrow">Alfatraining · KI-Beauftragte:r · Tag 8</div>
+  <div class="eyebrow">KI-Beauftragte:r · Tag 8</div>
   <h1>Lernkontrolle<br>Compliance</h1>
   <div class="header-meta">
     <span>10 Fragen</span>
@@ -181,16 +181,16 @@ var QUESTIONS = [
     opts: [
       'Schatten-KI bezeichnet den ungenehmigten Einsatz von KI-Werkzeugen außerhalb der offiziellen IT-Governance des Unternehmens.',
       'Schatten-KI birgt Risiken hinsichtlich Datenschutz, Vertraulichkeit und Compliance — besonders wenn sensible Unternehmensdaten eingegeben werden.',
-      'Schatten-KI ist kein relevantes Problem, solange die Tools kostenlos verfügbar sind.',
+      'Schatten-KI ist nur ein relevantes Problem, falls die Tools kostenlos verfügbar sind.',
       'Eine Inventur der Schatten-KI-Nutzung ist Ausgangspunkt für eine strukturierte KI-Governance.'
     ],
     correct: [0,1,3],
-    exp: 'Schatten-KI ist der ungenehmigte Einsatz von KI-Tools ohne Wissen der IT. Das Risiko: Mitarbeitende geben vertrauliche Daten (Kundeninformationen, interne Dokumente) in externe Systeme ein, ohne dass Datenschutz oder Compliance geprüft wurden. Kostenlose Tools haben oft nachteilige Nutzungsbedingungen — z. B. Verwendung der Eingaben für Trainingszwecke. Eine systematische Inventur ist der erste Schritt zur kontrollierten Governance.',
+    exp: 'Schatten-KI ist der ungenehmigte Einsatz von KI-Tools ohne Wissen der IT. Das Risiko: Mitarbeitende geben vertrauliche Daten (Kundeninformationen, interne Dokumente) in externe Systeme ein, ohne dass Datenschutz oder Compliance geprüft wurden. Kostenlose Tools haben oft nachteilige Nutzungsbedingungen — z. B. Verwendung der Eingaben für Trainingszwecke, Schatten-KI bezeichnet aber alle Anwendungen, die nicht offiziell von der IT betreut und gewartet werden. Eine systematische Inventur ist der erste Schritt zur kontrollierten Governance.',
     src: 'EU AI Act Art. 26 · DSGVO Art. 5', url: 'https://artificialintelligenceact.eu/article/26/'
   },
   {
     set: 'KI-Beauftragte:r',
-    q: 'Du führst als KI-Beauftragte:r eine Schatten-KI-Inventur durch. Welche Bereiche müssen dabei erfasst werden? Welche Aussage ist korrekt?',
+    q: 'Du führst als KI-Beauftragte:r eine Schatten-KI-Inventur durch. Welche Bereiche müssen dabei erfasst werden? Welche Aussage(n) ist oder sind korrekt?',
     opts: [
       'Welche KI-Tools von welchen Mitarbeitenden für welche Aufgaben genutzt werden — einschließlich kostenloser und privat genutzter Tools.',
       'Ausschließlich KI-Tools, die personenbezogene Daten verarbeiten — alle anderen Tools fallen nicht unter die Inventurpflicht.',
@@ -206,9 +206,9 @@ var QUESTIONS = [
     q: 'Ein Abteilungsleiter will kostenlose KI-Tools genehmigen, weil sie "genauso gut" wie die kostenpflichtigen Enterprise-Versionen seien. Du erklärst als KI-Beauftragte:r den Compliance-Unterschied. Welche Aussage(n) sind korrekt?',
     opts: [
       'Enterprise-Versionen (z. B. Microsoft Copilot, ChatGPT Enterprise) bieten in der Regel Verträge zur Auftragsverarbeitung (AVV) nach DSGVO Art. 28.',
-      'Bei kostenlosen Consumer-Versionen werden Eingaben oft für das Modell-Training verwendet — was beim Einsatz für Firmendaten datenschutzrechtlich problematisch ist.',
-      'Kostenlose und Enterprise-Versionen sind aus Compliance-Sicht identisch — nur der Preis unterscheidet sich.',
-      'Enterprise-Versionen beinhalten typischerweise Zusicherungen zur Datenisolation und SLAs für Verfügbarkeit.'
+      'Bei kostenlosen Versionen werden Eingaben oft für das Modell-Training verwendet — was beim Einsatz für Firmendaten datenschutzrechtlich problematisch ist.',
+      'Kostenlose und Enterprise-Versionen sind aus Compliance-Sicht praktisch identisch — nur der Preis unterscheidet sich.',
+      'Enterprise-Versionen beinhalten typischerweise Zusicherungen zur Datenisolation und SLAs (Service Level Agreements) hinsichtlichlich der Verfügbarkeit.'
     ],
     correct: [0,1,3],
     exp: 'Der Compliance-Unterschied ist erheblich: Enterprise-Versionen bieten AVV nach DSGVO Art. 28, Datenisolation, keine Nutzung für Training und SLAs. Consumer-Tools haben oft AGB, die Eingaben für Trainingszwecke erlauben — das widerspricht Datenschutz und Vertraulichkeitspflichten. Diese Unterschiede sind die rechtliche Grundlage für eine Tool-Governance-Richtlinie.',
@@ -248,7 +248,7 @@ var QUESTIONS = [
     opts: [
       'NIST AI RMF ist ein US-amerikanisches Rahmenwerk (keine ISO-Norm) mit vier Kernfunktionen: Govern, Map, Measure, Manage.',
       'ISO/IEC 42001 und NIST AI RMF verfolgen ähnliche Ziele, sind aber unterschiedlich strukturiert — eine Übersetzungstabelle (Crosswalk) hilft bei der Integration.',
-      'NIST AI RMF ist in der EU verbindlich und ersetzt den EU AI Act für technische Anforderungen.',
+      'NIST AI RMF kann in der EU den EU AI Act für technische Anforderungen ersetzen.',
       'NIST AI RMF kann ISO/IEC 42001 vollständig ersetzen, da beide Rahmenwerke identische Anforderungen abbilden.'
     ],
     correct: [0,1],
@@ -261,11 +261,11 @@ var QUESTIONS = [
     opts: [
       'Der CISO verantwortet die technische Sicherheitskonfiguration von M365 — Tenant-Einstellungen, Conditional Access, DLP-Regeln.',
       'Der KI-Beauftragte bewertet Copilot regulatorisch und stimmt Richtlinien ab — ohne in die technische Administration einzugreifen.',
-      'Der CISO ist alleinverantwortlich für alle Compliance-Fragen rund um M365 — der KI-Beauftragte hat keine Rolle.',
+      'Der CISO verantwortet die Compliance von Kernsystemen wie M365 — der KI-Beauftragte hat da keine operative Rolle.',
       'Bei KI-Vorfällen in M365 ist ausschließlich der CISO zuständig — der KI-Beauftragte wird erst nach Abschluss der technischen Untersuchung einbezogen.'
     ],
     correct: [0,1],
-    exp: 'Die Aufgabenteilung ist klar: Der CISO verantwortet die technische Sicherheitsarchitektur und -konfiguration. Der KI-Beauftragte bringt die regulatorische Perspektive (EU AI Act, DSGVO, Betreiberpflichten). Bei Vorfällen ist eine enge, parallele Zusammenarbeit beider Rollen notwendig — nicht nacheinander. Technische Beweissicherung (CISO) und regulatorische Folgenabschätzung (KI-Beauftragte:r) müssen zeitgleich laufen, weil Meldefristen (z. B. 72 Stunden nach DSGVO Art. 33) keine sequenzielle Bearbeitung erlauben.',
+    exp: 'Die Aufgabenteilung ist klar: Der CISO verantwortet die technische Sicherheitsarchitektur und -konfiguration. Der KI-Beauftragte bringt die regulatorische Perspektive (EU AI Act, DSGVO, Betreiberpflichten) ein. Der oder die KIB sollte nicht operativ dafür verantwortlich sein, die Compliance (die mehr umfasst als nur KI) in der IT umzusetzen. Achtung: Die KI-Manager:in hat im Verständnis des TÜV in einer späteren Prüfung eine deutlich operativere Rolle. Bei Vorfällen ist eine enge, parallele Zusammenarbeit beider Rollen notwendig — nicht nacheinander. Technische Beweissicherung (CISO) und regulatorische Folgenabschätzung (KI-Beauftragte:r) müssen zeitgleich laufen, weil Meldefristen (z. B. 72 Stunden nach DSGVO Art. 33) keine sequenzielle Bearbeitung erlauben.',
     src: 'EU AI Act Art. 26 · ISO/IEC 27001', url: 'https://artificialintelligenceact.eu/article/26/'
   },
   {
@@ -273,7 +273,7 @@ var QUESTIONS = [
     q: 'Du prüfst als CISO, ob Data Loss Prevention (DLP) in Microsoft 365 ausreicht, um den KI-Compliance-Anforderungen zu genügen. Welche Aussage(n) sind korrekt?',
     opts: [
       'DLP erkennt und blockiert die unkontrollierte Weitergabe sensibler Daten — z. B. IBAN-Nummern oder Gesundheitsdaten — in E-Mails oder Dokumente.',
-      'DLP allein garantiert vollständige KI-Compliance nach EU AI Act — weitere Maßnahmen sind nicht notwendig.',
+      'DLP allein garantiert bereits die KI-Compliance nach EU AI Act — weitere Maßnahmen sind nice-to-have, aber nicht notwendig.',
       'DLP-Regeln können so konfiguriert werden, dass bestimmte Dokumententypen nicht durch Copilot verarbeitet werden.',
       'DLP ist eine technische Kontrolle, die durch organisatorische Maßnahmen (Richtlinien, Schulungen) ergänzt werden muss.'
     ],
@@ -296,11 +296,11 @@ var QUESTIONS = [
   },
   {
     set: 'CISO',
-    q: 'Dein Unternehmen hat mehrere KI-Initiativen mit unterschiedlichem Reifegrad. Als CISO bewertest du, auf welchem Compliance-Reifegrad sich die KI-Governance befindet. Welche Aussage(n) zu einem strukturierten Reifegradmodell sind korrekt?',
+    q: 'Dein Unternehmen hat mehrere KI-Initiativen mit unterschiedlichem Reifegrad. Als CISO bewertest du, auf welchem Compliance-Reifegrad sich die KI-Governance befindet. Welche Aussage(n) zu einem strukturierten Reifegradmodell ist oder sind korrekt?',
     opts: [
       'Ad-hoc-KI-Governance bedeutet, dass die Organisation bewusst auf Inventar und Richtlinien verzichtet, weil der EU AI Act dies für KMU ausdrücklich erlaubt.',
       'Im Managed-Stadium verfügt die Organisation über ein vollständiges AIMS nach ISO/IEC 42001 mit abgeschlossener Zertifizierung.',
-      'Stufe 3 (Optimized): Vollständiges AIMS nach ISO/IEC 42001, kontinuierliche Verbesserung, Audit-Bereitschaft.',
+      'Stufe 3 (Optimized) bedeutet beispielsweise ein AIMS nach ISO/IEC 42001, kontinuierliche Verbesserung, Audit-Bereitschaft.',
       'Ein höherer Reifegrad erhöht grundsätzlich die regulatorischen Risiken — je strukturierter, desto mehr Angriffsfläche für Aufsichtsbehörden.'
     ],
     correct: [2],

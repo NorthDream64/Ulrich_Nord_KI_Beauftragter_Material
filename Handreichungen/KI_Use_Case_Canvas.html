@@ -1136,17 +1136,61 @@ hr.divider{border:none;border-top:1px solid var(--rule);margin:1rem 0;}
     <h2>Risikoregister</h2>
     <p>Strukturierte Bewertung nach sechs KI-Risikoarten. Bewertungsschema: <strong>A × B × E</strong> — <strong>A</strong> (Auftreten/Eintrittswahrscheinlichkeit) × <strong>B</strong> (Bedeutung/Schadenshöhe) × <strong>E</strong> (Entdeckbarkeit/Schwierigkeit der Detektion), je 1–10, max. Score = 1.000. <strong>Verantwortlich/Owner:</strong> Bitte eine konkrete Person eintragen — keine Abteilung und keine Rolle.</p>
     <p style="font-size:0.84rem;margin-top:0.5rem;line-height:1.55"><strong>Was der Score bedeutet:</strong> <span style="color:#2e7d32;font-weight:600">1–49 (grün)</span> = im Rahmen, Maßnahme dokumentieren und beobachten · <span style="color:#f57f17;font-weight:600">50–199 (gelb)</span> = Mitigationsmaßnahme mit Termin und benannter Person verbindlich festlegen · <span style="color:#b71c1c;font-weight:600">ab 200 (rot)</span> = Eskalation an das Steuerungsgremium; ohne dokumentierte Mitigation oder bewusste Risikoannahme keine Freigabeempfehlung in Abschnitt 16.</p>
+
+    <div class="alert alert-info" style="margin-top:0.8rem">
+      <p style="margin-bottom:0.5rem"><strong>📏 Was die Zahlen bedeuten — Bewertungsleitfaden für A, B und E</strong></p>
+      <div style="overflow-x:auto">
+        <table style="width:100%;border-collapse:collapse;font-size:0.79rem">
+          <thead>
+            <tr style="background:var(--navy);color:#fff">
+              <th style="padding:0.38rem 0.6rem;text-align:left;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.08em;white-space:nowrap">Stufe</th>
+              <th style="padding:0.38rem 0.6rem;text-align:left;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.08em"><strong>A</strong> · Auftreten</th>
+              <th style="padding:0.38rem 0.6rem;text-align:left;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.08em"><strong>B</strong> · Bedeutung</th>
+              <th style="padding:0.38rem 0.6rem;text-align:left;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.08em"><strong>E</strong> · Entdeckung</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="background:rgba(0,0,0,0.02)">
+              <td style="padding:0.4rem 0.6rem;font-weight:600;white-space:nowrap">1–2</td>
+              <td style="padding:0.4rem 0.6rem">Praktisch unmöglich</td>
+              <td style="padding:0.4rem 0.6rem">Vernachlässigbar</td>
+              <td style="padding:0.4rem 0.6rem">Sicher entdeckt</td>
+            </tr>
+            <tr>
+              <td style="padding:0.4rem 0.6rem;font-weight:600;white-space:nowrap">3–4</td>
+              <td style="padding:0.4rem 0.6rem">Sehr selten</td>
+              <td style="padding:0.4rem 0.6rem">Gering, korrigierbar</td>
+              <td style="padding:0.4rem 0.6rem">Hohe Entdeckungs&shy;wahrscheinlichkeit</td>
+            </tr>
+            <tr style="background:rgba(0,0,0,0.02)">
+              <td style="padding:0.4rem 0.6rem;font-weight:600;white-space:nowrap">5–7</td>
+              <td style="padding:0.4rem 0.6rem">Gelegentlich möglich</td>
+              <td style="padding:0.4rem 0.6rem">Spürbar, erheblicher Aufwand</td>
+              <td style="padding:0.4rem 0.6rem">Mittlere Entdeckungs&shy;wahrscheinlichkeit</td>
+            </tr>
+            <tr>
+              <td style="padding:0.4rem 0.6rem;font-weight:600;white-space:nowrap">8–10</td>
+              <td style="padding:0.4rem 0.6rem">Häufig, fast sicher</td>
+              <td style="padding:0.4rem 0.6rem">Schwer, irreversibel, Gesundheits&shy;schaden</td>
+              <td style="padding:0.4rem 0.6rem">Sehr unwahrscheinlich</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="margin-top:0.6rem;font-size:0.77rem;color:#64748b;line-height:1.55">
+        <strong>Achtung bei E:</strong> Die Skala läuft gegenläufig zur Intuition. <strong>Ein hoher Wert ist schlecht</strong> — er bedeutet, dass der Fehler wahrscheinlich unbemerkt bleibt. Wer ein Risiko sicher erkennt, vergibt eine <em>niedrige</em> Zahl. Das ist die häufigste Fehlerquelle beim ersten Ausfüllen.
+      </p>
+    </div>
   </div>
 
   <!-- Bias-Risiken -->
   <div class="risk-category">
     <div class="risk-cat-header"><span class="risk-cat-icon">⚖️</span> Bias-Risiken — Systematische Verzerrungen &amp; Diskriminierung</div>
     <table class="risk-rows">
-      <thead><tr><th style="width:13%">Risikobeschreibung</th><th style="width:12%">Ursache / Quelle</th><th style="width:12%">Auswirkung</th><th style="width:12%">Mitigationsmaßnahme</th><th style="width:5%">A</th><th style="width:5%">B</th><th style="width:5%">E</th><th style="width:6%">Score</th><th style="width:6%">Status</th><th style="width:11%">Verantwortlich/Owner</th></tr></thead>
+      <thead><tr><th style="width:18%">Risikobeschreibung</th><th style="width:17%">Auswirkung</th><th style="width:17%">Mitigationsmaßnahme</th><th style="width:5%">A</th><th style="width:5%">B</th><th style="width:5%">E</th><th style="width:7%">Score</th><th style="width:11%">Status</th><th style="width:15%">Verantwortlich/Owner</th></tr></thead>
       <tbody id="bias-rows">
         <tr>
           <td><input type="text" placeholder="z. B. Demografische Unterrepräsentation im Trainingsset"></td>
-          <td><textarea placeholder="z. B. Historische Daten spiegeln frühere Benachteiligungen wider"></textarea></td>
           <td><textarea placeholder="z. B. Falschklassifikation bestimmter Bevölkerungsgruppen bei Kreditvergabe"></textarea></td>
           <td><input type="text" placeholder="z. B. Bias-Audit, Re-Balancing Trainingsdaten"></td>
           <td><select onchange="updateScore(this)"><option value="0">—</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option></select></td>
@@ -1165,11 +1209,10 @@ hr.divider{border:none;border-top:1px solid var(--rule);margin:1rem 0;}
   <div class="risk-category">
     <div class="risk-cat-header"><span class="risk-cat-icon">⚙️</span> Technische Fehler — Model Drift, Robustheit, Fehlerfortpflanzung</div>
     <table class="risk-rows">
-      <thead><tr><th style="width:13%">Risikobeschreibung</th><th style="width:12%">Ursache / Quelle</th><th style="width:12%">Auswirkung</th><th style="width:12%">Mitigationsmaßnahme</th><th style="width:5%">A</th><th style="width:5%">B</th><th style="width:5%">E</th><th style="width:6%">Score</th><th style="width:6%">Status</th><th style="width:11%">Verantwortlich/Owner</th></tr></thead>
+      <thead><tr><th style="width:18%">Risikobeschreibung</th><th style="width:17%">Auswirkung</th><th style="width:17%">Mitigationsmaßnahme</th><th style="width:5%">A</th><th style="width:5%">B</th><th style="width:5%">E</th><th style="width:7%">Score</th><th style="width:11%">Status</th><th style="width:15%">Verantwortlich/Owner</th></tr></thead>
       <tbody id="tech-rows">
         <tr>
           <td><input type="text" placeholder="z. B. Model Drift nach 6 Monaten Betrieb"></td>
-          <td><textarea placeholder="z. B. Verschiebung der Datenverteilung gegenüber Trainingsdaten"></textarea></td>
           <td><textarea placeholder="z. B. Accuracy-Einbruch unter Schwellenwert, fehlerhafte Prognosen"></textarea></td>
           <td><input type="text" placeholder="z. B. Monatliches Performance-Monitoring, Retraining-Schwellenwert definieren"></td>
           <td><select onchange="updateScore(this)"><option value="0">—</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option></select></td>
@@ -1188,11 +1231,10 @@ hr.divider{border:none;border-top:1px solid var(--rule);margin:1rem 0;}
   <div class="risk-category">
     <div class="risk-cat-header"><span class="risk-cat-icon">🧭</span> Ethische Risiken — Autonomie, Transparenz, Informed Consent</div>
     <table class="risk-rows">
-      <thead><tr><th style="width:13%">Risikobeschreibung</th><th style="width:12%">Ursache / Quelle</th><th style="width:12%">Auswirkung</th><th style="width:12%">Mitigationsmaßnahme</th><th style="width:5%">A</th><th style="width:5%">B</th><th style="width:5%">E</th><th style="width:6%">Score</th><th style="width:6%">Status</th><th style="width:11%">Verantwortlich/Owner</th></tr></thead>
+      <thead><tr><th style="width:18%">Risikobeschreibung</th><th style="width:17%">Auswirkung</th><th style="width:17%">Mitigationsmaßnahme</th><th style="width:5%">A</th><th style="width:5%">B</th><th style="width:5%">E</th><th style="width:7%">Score</th><th style="width:11%">Status</th><th style="width:15%">Verantwortlich/Owner</th></tr></thead>
       <tbody id="ethik-rows">
         <tr>
           <td><input type="text" placeholder="z. B. Fehlende Transparenz gegenüber Betroffenen"></td>
-          <td><textarea placeholder="z. B. Black-Box-Modell ohne Erklärbarkeit der Entscheidungsgrundlage"></textarea></td>
           <td><textarea placeholder="z. B. Betroffene können Entscheidung nicht nachvollziehen oder anfechten"></textarea></td>
           <td><input type="text" placeholder="z. B. XAI-Methoden implementieren, Erklärungspflicht dokumentieren"></td>
           <td><select onchange="updateScore(this)"><option value="0">—</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option></select></td>
@@ -1212,11 +1254,10 @@ hr.divider{border:none;border-top:1px solid var(--rule);margin:1rem 0;}
     <div class="risk-cat-header"><span class="risk-cat-icon">🤖</span> KI-Agenten-Risiken — Autonome Handlungsketten, Kontrollverlust</div>
     <div class="alert alert-info" style="margin:0;border-radius:0"><p>Nur ausfüllen, wenn als KI-System-Typ „KI-Agent" ausgewählt wurde. Autonome Entscheidungsketten schaffen neue Haftungsebenen, da Zwischenschritte nicht mehr menschlich kontrolliert werden. Die Einstufung nach Handlungsspielraum und Autonomiegrad sowie die Angaben zu Least Privilege und Freigabe-Gate erfolgen in <strong>Abschnitt 2</strong> — die dort offen gebliebenen Punkte gehören als konkretes Risiko in diese Tabelle.</p></div>
     <table class="risk-rows">
-      <thead><tr><th style="width:13%">Risikobeschreibung</th><th style="width:12%">Ursache / Quelle</th><th style="width:12%">Auswirkung</th><th style="width:12%">Mitigationsmaßnahme</th><th style="width:5%">A</th><th style="width:5%">B</th><th style="width:5%">E</th><th style="width:6%">Score</th><th style="width:6%">Status</th><th style="width:11%">Verantwortlich/Owner</th></tr></thead>
+      <thead><tr><th style="width:18%">Risikobeschreibung</th><th style="width:17%">Auswirkung</th><th style="width:17%">Mitigationsmaßnahme</th><th style="width:5%">A</th><th style="width:5%">B</th><th style="width:5%">E</th><th style="width:7%">Score</th><th style="width:11%">Status</th><th style="width:15%">Verantwortlich/Owner</th></tr></thead>
       <tbody id="agent-rows">
         <tr>
           <td><input type="text" placeholder="z. B. Unkontrollierte Toolausführung (E-Mail, API-Call)"></td>
-          <td><textarea placeholder="z. B. Prompt-Injection durch externe Datenquellen im Agentenkontext"></textarea></td>
           <td><textarea placeholder="z. B. Unberechtigte Datenübertragung oder irreversible Systemaktion"></textarea></td>
           <td><input type="text" placeholder="z. B. Tool-Whitelist, Human-Approval-Gate für irreversible Aktionen"></td>
           <td><select onchange="updateScore(this)"><option value="0">—</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option></select></td>
@@ -1235,11 +1276,10 @@ hr.divider{border:none;border-top:1px solid var(--rule);margin:1rem 0;}
   <div class="risk-category">
     <div class="risk-cat-header"><span class="risk-cat-icon">⚖️</span> Rechtliche &amp; Compliance-Risiken</div>
     <table class="risk-rows">
-      <thead><tr><th style="width:13%">Risikobeschreibung</th><th style="width:12%">Ursache / Quelle</th><th style="width:12%">Auswirkung</th><th style="width:12%">Mitigationsmaßnahme</th><th style="width:5%">A</th><th style="width:5%">B</th><th style="width:5%">E</th><th style="width:6%">Score</th><th style="width:6%">Status</th><th style="width:11%">Verantwortlich/Owner</th></tr></thead>
+      <thead><tr><th style="width:18%">Risikobeschreibung</th><th style="width:17%">Auswirkung</th><th style="width:17%">Mitigationsmaßnahme</th><th style="width:5%">A</th><th style="width:5%">B</th><th style="width:5%">E</th><th style="width:7%">Score</th><th style="width:11%">Status</th><th style="width:15%">Verantwortlich/Owner</th></tr></thead>
       <tbody id="legal-rows">
         <tr>
           <td><input type="text" placeholder="z. B. Sanktionen nach EU AI Act bei fehlender Konformitätsbewertung"></td>
-          <td><textarea placeholder="z. B. Hochrisiko-KI ohne CE-Kennzeichnung in Betrieb genommen"></textarea></td>
           <td><textarea placeholder="z. B. Bußgeld bis 3 % des weltweiten Jahresumsatzes (Art. 99 KI-VO)"></textarea></td>
           <td><input type="text" placeholder="z. B. Konformitätsbewertungsverfahren einleiten (→ Abschnitt 10)"></td>
           <td><select onchange="updateScore(this)"><option value="0">—</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option></select></td>
@@ -1259,11 +1299,10 @@ hr.divider{border:none;border-top:1px solid var(--rule);margin:1rem 0;}
     <div class="risk-cat-header"><span class="risk-cat-icon">🔒</span> Cybersicherheit &amp; Systemintegrität — Art. 15 KI-VO</div>
     <div class="alert alert-info" style="margin:0;border-radius:0"><p>Art. 15 KI-VO verpflichtet Anbieter von Hochrisiko-KI-Systemen zu Maßnahmen gegen Angriffe auf Integrität, Verfügbarkeit und Vertraulichkeit. Abs. 3: Genauigkeit und Robustheit bei Adversarial Inputs; Abs. 4: Resilienz gegen Datenvergiftung (Data Poisoning); Abs. 5: Schutz gegen Angriffe auf Modelldaten und -parameter. Vgl. auch <strong>Anhang IV Nr. 2 lit. g</strong> (Cybersicherheitsmaßnahmen in der technischen Dokumentation).</p></div>
     <table class="risk-rows">
-      <thead><tr><th style="width:13%">Risikobeschreibung</th><th style="width:12%">Ursache / Quelle</th><th style="width:12%">Auswirkung</th><th style="width:12%">Mitigationsmaßnahme</th><th style="width:5%">A</th><th style="width:5%">B</th><th style="width:5%">E</th><th style="width:6%">Score</th><th style="width:6%">Status</th><th style="width:11%">Verantwortlich/Owner</th></tr></thead>
+      <thead><tr><th style="width:18%">Risikobeschreibung</th><th style="width:17%">Auswirkung</th><th style="width:17%">Mitigationsmaßnahme</th><th style="width:5%">A</th><th style="width:5%">B</th><th style="width:5%">E</th><th style="width:7%">Score</th><th style="width:11%">Status</th><th style="width:15%">Verantwortlich/Owner</th></tr></thead>
       <tbody id="cyber-rows">
         <tr>
           <td><input type="text" placeholder="z. B. Adversarial Attack — manipulierte Eingabedaten täuschen das Modell"></td>
-          <td><textarea placeholder="z. B. Angreifer verändert Bilddaten minimal, verändert Klassifizierung erheblich"></textarea></td>
           <td><textarea placeholder="z. B. KI trifft sicherheitskritische Fehlentscheidung (z. B. Zugangskontrolle)"></textarea></td>
           <td><input type="text" placeholder="z. B. Input-Validierung, Adversarial-Robustness-Tests, kontinuierliches Monitoring"></td>
           <td><select onchange="updateScore(this)"><option value="0">—</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option></select></td>
@@ -3509,9 +3548,9 @@ function updateScore(sel) {
     const sel = td.querySelector('select');
     if (!sel) return;
     const v = parseInt(sel.value) || 0;
-    if (i === 4) a = v;
-    if (i === 5) b = v;
-    if (i === 6) e = v;
+    if (i === 3) a = v;
+    if (i === 4) b = v;
+    if (i === 5) e = v;
   });
   const scoreEl = row.querySelector('.risk-score');
   if (!scoreEl) return;
@@ -3529,7 +3568,6 @@ function addRiskRow(tbodyId) {
   const newRow = document.createElement('tr');
   newRow.innerHTML = `
     <td><input type="text" placeholder="Risikobeschreibung"></td>
-    <td><textarea placeholder="Ursache / Quelle"></textarea></td>
     <td><textarea placeholder="Auswirkung"></textarea></td>
     <td><input type="text" placeholder="Mitigationsmaßnahme"></td>
     <td><select onchange="updateScore(this)"><option value="0">—</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option></select></td>
@@ -3896,17 +3934,16 @@ function gatherRiskTables() {
     const rows = [];
     tbody.querySelectorAll('tr').forEach(tr => {
       const tds = tr.querySelectorAll('td');
-      if (tds.length < 10) return;
+      if (tds.length < 9) return;
       rows.push({
         desc:       tds[0].querySelector('input')?.value    || '',
-        cause:      tds[1].querySelector('textarea')?.value || '',
-        auswirkung: tds[2].querySelector('textarea')?.value || '',
-        mit:        tds[3].querySelector('input')?.value    || '',
-        a:          tds[4].querySelector('select')?.value   || '0',
-        b:          tds[5].querySelector('select')?.value   || '0',
-        e:          tds[6].querySelector('select')?.value   || '0',
-        status:     tds[8].querySelector('select')?.value   || 'Offen',
-        owner:      tds[9].querySelector('input')?.value    || ''
+        auswirkung: tds[1].querySelector('textarea')?.value || '',
+        mit:        tds[2].querySelector('input')?.value    || '',
+        a:          tds[3].querySelector('select')?.value   || '0',
+        b:          tds[4].querySelector('select')?.value   || '0',
+        e:          tds[5].querySelector('select')?.value   || '0',
+        status:     tds[7].querySelector('select')?.value   || 'Offen',
+        owner:      tds[8].querySelector('input')?.value    || ''
       });
     });
     result['risk_' + tbId] = rows;
@@ -4038,14 +4075,13 @@ function restoreRiskTables(data) {
       const setSel = (td, val) => { const el = td?.querySelector('select');   if (el) { el.value = val; updateScore(el); } };
       const setSelNoScore = (td, val) => { const el = td?.querySelector('select'); if (el) el.value = val; };
       setInp(tds[0], row.desc);
-      setTa (tds[1], row.cause);
-      setTa (tds[2], row.auswirkung || '');
-      setInp(tds[3], row.mit);
-      setSel(tds[4], row.a || row.w || '0');
-      setSel(tds[5], row.b || row.s || '0');
-      setSel(tds[6], row.e || row.d || '0');
-      setSelNoScore(tds[8], row.status || 'Offen');
-      setInp(tds[9], row.owner || '');
+      setTa (tds[1], row.auswirkung || '');
+      setInp(tds[2], row.mit);
+      setSel(tds[3], row.a || row.w || '0');
+      setSel(tds[4], row.b || row.s || '0');
+      setSel(tds[5], row.e || row.d || '0');
+      setSelNoScore(tds[7], row.status || 'Offen');
+      setInp(tds[8], row.owner || '');
     });
   });
 }
